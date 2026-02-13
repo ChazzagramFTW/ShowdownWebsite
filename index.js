@@ -1,28 +1,32 @@
+require('dotenv').config();
 const express = require("express");
 const app = express();
 const path = require("path");
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
+
 const uri = process.env.MONGO_URI;
 
+// Fail fast if MONGO_URI is missing
+if (!uri) {
+  console.error("ERROR: MONGO_URI is undefined. Set it in your .env or Render environment variables.");
+  process.exit(1);
+}
 
-// Serve all static files from the 'public' folder
+// Serve static files from 'public' folder
 app.use(express.static(path.join(__dirname, "public")));
 
-// Optional: any additional route
+// Example route
 app.get("/hello", (req, res) => {
   res.send("This is the hello response");
 });
 
+// Health check for Render
 app.get('/healthz', (req, res) => {
   res.status(200).send('OK');
 });
 
-// Start the server
-app.listen(3000, () => {
-  console.log("Server is running at http://localhost:3000");
-});
-
+// MongoDB client
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -35,12 +39,14 @@ let collection; // store collection globally
 
 async function startServer() {
   try {
+    // Connect to MongoDB
     await client.connect();
     console.log("Connected to MongoDB");
 
     const database = client.db("Showdown");
-    collection = database.collection("Event Stats");
+    collection = database.collection("EventStats"); // avoid spaces in collection name
 
+    // API route
     app.get("/api/events", async (req, res) => {
       try {
         const data = await collection.find({}).toArray();
@@ -51,12 +57,15 @@ async function startServer() {
       }
     });
 
-    app.listen(3000, () => {
-      console.log("Server running at http://localhost:3000");
+    // Start the server **once** with dynamic port
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT}`);
     });
 
   } catch (err) {
-    console.error(err);
+    console.error("Failed to connect to MongoDB:", err);
+    process.exit(1);
   }
 }
 
