@@ -14,6 +14,10 @@ app.get("/hello", (req, res) => {
   res.send("This is the hello response");
 });
 
+app.get('/healthz', (req, res) => {
+  res.status(200).send('OK');
+});
+
 // Start the server
 app.listen(3000, () => {
   console.log("Server is running at http://localhost:3000");
