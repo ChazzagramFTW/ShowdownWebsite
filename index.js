@@ -1,5 +1,3 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
-
 require('dotenv').config();
 const express = require("express");
 const app = express();
