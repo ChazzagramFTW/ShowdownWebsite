@@ -47,7 +47,7 @@ async function startServer() {
     console.log("Connected to MongoDB");
 
     const database = client.db("Showdown");
-    collection = database.collection("EventStats"); // avoid spaces in collection name
+    collection = database.collection("Event Stats"); // avoid spaces in collection name
 
     // API route
     app.get("/api/events", async (req, res) => {
