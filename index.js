@@ -1,3 +1,5 @@
+import { MongoClient, ServerApiVersion } from 'mongodb';
+
 require('dotenv').config();
 const express = require("express");
 const app = express();
@@ -36,9 +38,6 @@ const client = new MongoClient(uri, {
   },
   tls: true,
   tlsAllowInvalidCertificates: false,
-  secureContext: {
-    secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT
-  }
 });
 
 let collection; // store collection globally
