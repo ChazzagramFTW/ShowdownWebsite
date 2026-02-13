@@ -27,14 +27,18 @@ app.get('/healthz', (req, res) => {
 });
 
 // MongoDB client
+
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
     deprecationErrors: true,
   },
-  tls: true,              // enable TLS explicitly
-  tlsAllowInvalidCertificates: false // secure
+  tls: true,
+  tlsAllowInvalidCertificates: false,
+  secureContext: {
+    secureOptions: crypto.constants.SSL_OP_LEGACY_SERVER_CONNECT
+  }
 });
 
 let collection; // store collection globally
