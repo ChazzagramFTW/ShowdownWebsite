@@ -33,6 +33,8 @@ const client = new MongoClient(uri, {
     strict: true,
     deprecationErrors: true,
   },
+  tls: true,              // enable TLS explicitly
+  tlsAllowInvalidCertificates: false // secure
 });
 
 let collection; // store collection globally
