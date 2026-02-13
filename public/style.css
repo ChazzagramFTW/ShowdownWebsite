@@ -8,8 +8,7 @@
   font-family: 'Magoat';
   font-style: normal;
   font-weight: 100;
-  src: local(''),
-    url('/libs/Magoat.ttf') format('ttf')
+  src: url('/libs/Magoat.ttf') format('truetype');
 }
 
 html {
