@@ -332,7 +332,7 @@ p {
 }
 
 #staff-team .staff-panel h1 {
-    font-size: 1.2em;
+    font-size: 1em;
     padding-top: 0.5em;
     padding-bottom: 0;
     letter-spacing: 0.2ch;
@@ -1104,6 +1104,10 @@ figure img {
 
     .staff-panel {
         width: 30%;
+    }
+
+    #staff-team .staff-panel h1 {
+        font-size: 0.9em;
     }
 
     .panel h1,
