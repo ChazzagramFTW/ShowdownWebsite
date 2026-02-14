@@ -5,6 +5,13 @@ const optionsContainer = dropdown.querySelector('.options');
 const options = dropdown.querySelectorAll('.option');
 const container = document.getElementById("leaderboards");
 
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
 selected.addEventListener('click', () => {
     optionsContainer.style.display = optionsContainer.style.display === 'none' ? 'block' : 'none';
 });

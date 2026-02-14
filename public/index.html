@@ -18,12 +18,27 @@
     </header>
     <main>
         <nav>
-            <a href="https://mcshowdown.org" class="active">Home</a>
-            <a href="https://mcshowdown.org/#event-info">Event Info</a>
-            <a href="https://mcshowdown.org/#the-games">The Games</a>
-            <a href="https://mcshowdown.org/#staff-team">Staff Team</a>
-            <a href="/stats">Stat Sheet</a>
-            <a href="/news">News & Updates</a>
+            <div class="desktop-nav">
+                <a href="https://mcshowdown.org"><img src="libs/home.svg" alt="" srcset=""></a>
+                <a href="https://mcshowdown.org/#event-info">Event Info</a>
+                <a href="https://mcshowdown.org/#the-games">The Games</a>
+                <a href="https://mcshowdown.org/#staff-team">Staff Team</a>
+                <a href="/stats">Stat Sheet</a>
+                <a href="/news">News & Updates</a>
+            </div>
+              <div class="mobile-nav">
+                <button id="mobile-menu-btn">
+                    <img src="libs/burger.svg" alt="Menu" />
+                </button>
+                <div id="mobile-menu" class="mobile-menu">
+                    <a href="https://mcshowdown.org">Home</a>
+                    <a href="https://mcshowdown.org/#event-info">Event Info</a>
+                    <a href="https://mcshowdown.org/#the-games">The Games</a>
+                    <a href="https://mcshowdown.org/#staff-team">Staff Team</a>
+                    <a href="/stats">Stat Sheet</a>
+                    <a href="/news">News & Updates</a>
+                </div>
+            </div>
         </nav>      
         <section class="panel" id="event-info">
             <h1>Welcome to Showdown</h1>
@@ -182,6 +197,10 @@
         <section id="legal-info">
             <img src="libs/showdownsvg.png" alt="Showdown Logo.">
             <p>Created by Chazzagram.</p>
+            <section id="copy">
+                <p><em>We are not associated/affiliated w/ Mojang & Microsoft.</em></p>
+                <p>© 2026 MCShowdown. All rights reserved.</p>
+            </section>
         </section>
     </footer>
 </body>

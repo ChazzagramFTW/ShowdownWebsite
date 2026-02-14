@@ -1,16 +1,9 @@
 const sections = document.querySelectorAll("main section[id]");
-const homeLink = document.querySelector('nav a[href="https://mcshowdown.org"]');
 
 window.addEventListener("scroll", navHighlighter);
 
 function navHighlighter() {
   const scrollY = window.pageYOffset;
-
-  if (scrollY < 50) {
-    homeLink.classList.add("active");
-  } else {
-    homeLink.classList.remove("active");
-  }
 
   sections.forEach(section => {
     const sectionHeight = section.offsetHeight;
@@ -28,3 +21,10 @@ function navHighlighter() {
     }
   });
 }
+
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});

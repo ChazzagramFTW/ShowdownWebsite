@@ -5,13 +5,13 @@
 }
 
 @font-face {
-  font-family: 'Magoat';
-  font-style: normal;
-  font-weight: 100;
-  src:     url('/libs/Magoat.woff2') format('woff2'),
-    url('/libs/Magoat.woff') format('woff'),
-    url('/libs/Magoat.ttf') format('truetype');
-  
+    font-family: 'Magoat';
+    font-style: normal;
+    font-weight: 100;
+    src: url('/libs/Magoat.woff2') format('woff2'),
+        url('/libs/Magoat.woff') format('woff'),
+        url('/libs/Magoat.ttf') format('truetype');
+
 }
 
 html {
@@ -47,7 +47,7 @@ header {
     box-shadow: rgba(0, 0, 0, 0.2) 0 1em 1em;
 }
 
-nav {
+/* nav {
     background-image: url("libs/backdrop.png");
     background-size: cover;
     position: sticky;
@@ -59,9 +59,80 @@ nav {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+} */
+
+nav {
+    background-image: url("libs/backdrop.png");
+    background-size: cover;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1em;
+    font-family: Magoat, sans-serif;
 }
 
-nav a {
+.mobile-nav {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+/* Mobile menu button */
+#mobile-menu-btn {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mobile-menu-btn img {
+    height: 50px;
+}
+
+/* Hidden mobile menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    /* below nav */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.mobile-menu a {
+    color: #F5F5F5;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    text-shadow: rgba(32, 32, 32, 0.5) 0 2px 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.mobile-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Desktop nav hidden by default */
+.desktop-nav {
+    display: none;
+}
+
+/* nav a {
     color: #F5F5F5;
     font-size: 1.5em;
     font-family: Magoat;
@@ -69,17 +140,22 @@ nav a {
     text-decoration: none;
     text-transform: uppercase;
     border-bottom: solid transparent 3px;
+    text-align: center;
     text-shadow: rgba(32, 32, 32, 0.5) 0 2px 10px;
     transition: 0.2s ease-in-out;
 }
 
-nav a:hover {
+nav a img {
+    height: 32px;
+}
+
+nav:not(:first-child):hover {
     border-bottom: solid rgba(255,255,255,0.5) 3px; 
 }
 
 nav a.active {
     border-bottom: solid white 3px; 
-}
+} */
 
 #home-button {
     background-color: transparent;
@@ -133,9 +209,10 @@ p {
     align-items: center;
     flex-direction: column;
     width: 100%;
-    height: 600px;
+    height: 400px;
     background-image: url("libs/2026backdrop.png");
-    background-size: 100%;
+    background-size: cover;
+    background-position: center;
 }
 
 #feature h1 {
@@ -148,24 +225,24 @@ p {
     color: white;
     text-shadow: rgba(0, 0, 0, 1) 0em 0em 0.5em;
     font-weight: 100;
+    font-size: 0.9em;
 }
 
 
 #feature img {
-    height: 300px;
+    width: 370px;
     transform: scale(1);
     transition: 0.2s ease-in-out;
 }
 
 #feature img:hover {
-    height: 300px;
     transform: scale(1.05);
 }
 
 .panel {
-    width: 1200px;
+    width: 400px;
     margin: 5em auto;
-    padding: 3em;
+    padding: 1em;
 
 }
 
@@ -179,8 +256,8 @@ p {
 
 .event-panel {
     width: 100%;
-    height: 200px;
-    margin: 1em;
+    height: auto;
+    margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
     border-radius: 2em;
@@ -190,8 +267,8 @@ p {
 }
 
 .event-panel img {
-    width: 100%;
     height: 100%;
+    width: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
@@ -202,7 +279,7 @@ p {
 
 /* Dropdown-specific styling */
 .event-dropdown {
-    width: 70%;
+    width: 100%;
     margin: 2em auto;
     position: relative;
     z-index: 99;
@@ -217,24 +294,24 @@ p {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(0,0,0,0.8);
-    padding: 1em;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0 1em 1em 1em;
     margin-top: 1em;
     border-radius: 2em;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
 
 .options {
     overflow-y: auto;
-    height: 600px;
+    height: 300px;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+    scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
 }
 
 .staff-panel {
-    background-color: rgba(255,255,255,0.3);
-    width: 30%;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 95%;
     margin-top: 3em;
     padding: 2em;
     border-radius: 2em;
@@ -276,13 +353,13 @@ p {
 #welcome {
     margin: 2em 0;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 #welcome section {
-    margin: 0 2em;
+    margin: 1em 0;
 }
 
 #welcome p {
@@ -297,7 +374,7 @@ p {
     text-align: center;
     letter-spacing: 0.5em;
     text-shadow: rgba(0, 0, 0, 0.7) 0em 0em 0.5em;
-    font-size: 3em;
+    font-size: 1.5em;
     padding-bottom: 0.5em;
 }
 
@@ -321,7 +398,7 @@ p {
 .panel figure figcaption {
     text-align: left;
     width: 100%;
-    background-image: linear-gradient( rgba(0,0,0,0), rgba(44, 44, 44, 0.5), #202020);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(44, 44, 44, 0.5), #202020);
     border-end-end-radius: 1em;
     border-end-start-radius: 1em;
     padding: 1em;
@@ -348,19 +425,21 @@ p {
     text-align: center;
 }
 
-#the-games, #staff-team, #event-stats {
-    width: 1200px;
+#the-games,
+#staff-team,
+#event-stats {
+    width: 400px;
     margin: 5em auto;
 }
 
 #game-desc {
-    padding: 2em 5em 0 5em;
+    padding: 2em 1em 0 1em;
     text-align: center;
 }
 
 .game-panel {
     width: 100%;
-    height: 340px;
+    height: 400px;
     padding: 3em;
     margin: 2.5em auto;
     border-radius: 2em;
@@ -376,27 +455,28 @@ p {
     border-start-start-radius: 2em;
 }
 
-#the-games .game-panel:nth-child(odd) .game-panel-info{
+#the-games .game-panel:nth-child(odd) .game-panel-info {
     top: 0;
     right: 0;
     border-start-end-radius: 2em;
     border-end-end-radius: 2em;
-    text-align: right;
 }
 
 
 .game-panel-info {
-    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%;
     height: 100%;
     padding: 3em;
     position: absolute;
-    backdrop-filter: blur(1em);
     text-shadow: 0 0 0.5em black;
 }
 
 .game-panel img {
-    height: 150px;
-    width: auto;
+    width: 100%;
 }
 
 #the-games .game-panel:nth-child(even) .game-panel-info .new {
@@ -482,16 +562,16 @@ footer {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    padding: 2.7em;
+    padding: 1.5em;
     background-color: rgb(0, 34, 48);
-    height: 250px;
+    height: 200px;
 }
 
 footer p {
     font-family: Magoat;
     font-weight: 100;
     padding: 0.5em;
-    font-size: 1.5em;
+    font-size: 1em;
     letter-spacing: 0.2em;
 }
 
@@ -518,7 +598,7 @@ footer a {
 }
 
 #legal-info {
-    width: 300px;
+    width: 200px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -535,6 +615,11 @@ footer a {
     margin-left: auto;
 }
 
+#copy p {
+    font-size: 0.5em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .owner-colour {
     backdrop-filter: hue-rotate(200deg) saturate(700%);
 }
@@ -549,7 +634,7 @@ footer a {
 
 
 #article-body {
-    width: 1200px;
+    width: 400px;
     margin: 0 auto;
     padding: 5em 0;
 }
@@ -595,10 +680,10 @@ figure img {
     text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 95%;
     margin: 5em auto;
-    padding: 2em;
-    background-color: rgba(255,255,255,0.3);
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 2em;
     backdrop-filter: saturate(500%);
     box-shadow: inset 0 0 2em 0 white;
@@ -610,20 +695,18 @@ figure img {
     font-size: 0.8em;
 }
 
-#leaderboards img {
-    padding-left: 5px;
-}
 
 #leaderboards h2 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    margin: 0.5em;
     text-align: center;
     color: white;
 }
 
 #leaderboards .tables {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* two columns for team/player */
+    grid-template-rows: repeat(2, 1fr);
+    /* two columns for team/player */
     font-size: 1.2em;
     gap: 1rem;
 }
@@ -632,7 +715,7 @@ figure img {
     max-height: 690px;
     display: flex;
     flex-direction: column;
-    padding: 2em;
+    padding: 1em;
 }
 
 #leaderboards .scores-list {
@@ -642,7 +725,7 @@ figure img {
 
     /* Firefox scrollbar */
     scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.4) rgba(255,255,255,0.1);
+    scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
 }
 
 #leaderboards .scores-list .row {
@@ -651,7 +734,7 @@ figure img {
 
 
 #leaderboards article {
-    background-color: rgba(255,255,255,0.3);
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 2em;
     padding: 2em;
     box-shadow: inset 0 0 2em 0 white;
@@ -659,35 +742,57 @@ figure img {
 }
 
 #leaderboards article h3 {
-    margin-bottom: 1em;
-    font-size: 1.5em;
+    margin: 0.5em;
+    font-size: 1.2em;
     text-align: center;
 }
 
 #leaderboards .row {
     display: grid;
-    grid-template-columns: 40px 37px 1fr 100px; /* # | Name | Points */
+    grid-template-columns: 20px 25px 1fr 100px;
+    /* # | Name | Points */
     padding: 1em;
-    background-color: rgba(0,0,0,0.3);
+    font-size: 0.7em;
+    background-color: rgba(0, 0, 0, 0.3);
     border-radius: 1em;
     margin-top: 0.4em;
     align-items: center;
 }
 
 #leaderboards .header {
-    grid-template-columns: 40px 1fr 100px; /* # | Name | Points */
+    grid-template-columns: 20px 1fr 80px;
+    /* # | Name | Points */
 }
 
 #leaderboards .team-leaderboard .row {
-    grid-template-columns: 40px 1fr 148px 100px;
+    grid-template-columns: 20px 1fr 55px 60px;
+    font-size: 0.7em;
+}
+
+#leaderboards .team-images {
+    margin-left: 10px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+#leaderboards .team-leaderboard .row img {
+    width: 20px;
 }
 
 #leaderboards .team-leaderboard .header {
-    grid-template-columns: 40px 1fr 100px;
+    grid-template-columns: 20px 1fr 100px;
 }
 
-#leaderboards .team-leaderboard .header div:nth-child(3) {
-    text-align: right; /* points column */
+#leaderboards .header div:nth-child(3) {
+    text-align: right;
+    /* points column */
+}
+
+#leaderboards .header div:nth-child(3) {
+    text-align: right;
+    /* points column */
 }
 
 
@@ -699,7 +804,448 @@ figure img {
     padding-left: 0.5em;
 }
 
-#leaderboards .player-leaderboard .row div:nth-child(4), 
+#leaderboards .player-leaderboard .row div:nth-child(4),
 #leaderboards .team-leaderboard .row div:nth-child(4) {
-    text-align: right; /* points column */
+    text-align: right;
+    /* points column */
+}
+
+@media screen and (min-width: 768px) {
+
+    .mobile-nav {
+        display: none;
+    }
+
+    .desktop-nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        width: auto;
+    }
+
+    .desktop-nav a {
+        width: min-content;
+        color: #F5F5F5;
+        font-size: 1.3em;
+        padding: 0.5em;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-bottom: 3px solid transparent;
+        text-align: center;
+        text-shadow: rgba(32, 32, 32, 0.5) 0 2px 10px;
+        transition: 0.2s ease-in-out;
+    }
+
+    .desktop-nav a img {
+        height: 32px;
+    }
+
+    .desktop-nav a:not(:first-child):hover {
+        border-bottom: 3px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .desktop-nav a.active {
+        border-bottom: 3px solid white;
+    }
+
+    #feature {
+        height: 600px;
+    }
+
+    #feature img {
+        width: 500px;
+    }
+
+    .panel {
+        width: 700px;
+        padding: 3em;
+    }
+
+    .event-panel {
+        height: 120px;
+        margin: 1em auto;
+    }
+
+    .event-dropdown {
+        width: 70%;
+    }
+
+    .options {
+        height: 600px;
+    }
+
+    .staff-panel {
+        width: 47%;
+    }
+
+    #staff-team .staff-panel h1 {
+        font-size: 1em;
+    }
+
+    #staff-team .staff-panel p {
+        font-size: 0.9em;
+    }
+
+    .panel h1,
+    #the-games h1,
+    #staff-team h1,
+    #event-stats h1 {
+        font-size: 2.5em;
+    }
+
+    #the-games,
+    #staff-team,
+    #event-stats {
+        width: 700px;
+    }
+
+    .game-panel {
+        height: 290px;
+    }
+
+    .game-panel-info {
+        max-width: 50%;
+        font-size: 0.8em;
+        backdrop-filter: blur(1em);
+    }
+
+    footer {
+        padding: 2.7em;
+        height: 250px;
+    }
+
+    footer p {
+        font-size: 1.5em;
+    }
+
+    #legal-info {
+        width: 300px;
+    }
+
+    #copy p {
+        font-size: 0.7em;
+    }
+
+    #article-body {
+        width: 700px;
+    }
+
+    #leaderboards h2 {
+        font-size: 3em;
+    }
+
+    #leaderboards .row {
+        font-size: 1em;
+        grid-template-columns: 30px 25px 1fr 100px;
+    }
+
+    /* Stats Sheets */
+    #leaderboards {
+        text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: 5em auto;
+        padding: 1em;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2em;
+        backdrop-filter: saturate(500%);
+        box-shadow: inset 0 0 2em 0 white;
+        transform: scale(1.0);
+        transition: ease-in-out 0.2s;
+        font-family: Magoat;
+        text-align: left;
+        color: white;
+        font-size: 0.8em;
+    }
+
+
+    #leaderboards h2 {
+        font-size: 3em;
+        margin: 0.5em 0;
+        text-align: center;
+        color: white;
+    }
+
+    #leaderboards .tables {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        /* two columns for team/player */
+        font-size: 1.2em;
+        gap: 1rem;
+    }
+
+    #leaderboards .tables article {
+        max-height: 690px;
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+    }
+
+    #leaderboards .scores-list {
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding-right: 1em;
+
+        /* Firefox scrollbar */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
+    }
+
+    #leaderboards .scores-list .row {
+        margin: 0.4em 0;
+    }
+
+
+    #leaderboards article {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2em;
+        padding: 2em;
+        box-shadow: inset 0 0 2em 0 white;
+        transition: ease-in-out 0.2s;
+    }
+
+    #leaderboards article h3 {
+        margin: 0.5em;
+        font-size: 1.7em;
+        text-align: center;
+    }
+
+    #leaderboards .row {
+        display: grid;
+        grid-template-columns: 30px 25px 1fr 100px;
+        /* # | Name | Points */
+        padding: 1em;
+        font-size: 1em;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 1em;
+        margin-top: 0.4em;
+        align-items: center;
+    }
+
+    #leaderboards .header {
+        grid-template-columns: 30px 1fr 80px;
+        /* # | Name | Points */
+    }
+
+    #leaderboards .team-leaderboard .row {
+        grid-template-columns: 30px 1fr 137px 70px;
+        font-size: 1em;
+    }
+
+    #leaderboards .team-images {
+        margin-left: 10px;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #leaderboards .team-leaderboard .row img {
+        width: 24px;
+    }
+
+    #leaderboards .team-leaderboard .header {
+        grid-template-columns: 30px 1fr 70px;
+    }
+
+    #leaderboards .header div:nth-child(3) {
+        text-align: right;
+        /* points column */
+    }
+
+    #leaderboards .header div:nth-child(3) {
+        text-align: right;
+        /* points column */
+    }
+
+
+    #leaderboards .row.header {
+        background-color: transparent;
+    }
+
+    #leaderboards .player-leaderboard .row div:nth-child(3) {
+        padding-left: 0.5em;
+    }
+
+    #leaderboards .player-leaderboard .row div:nth-child(4),
+    #leaderboards .team-leaderboard .row div:nth-child(4) {
+        text-align: right;
+        /* points column */
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+
+    .desktop-nav a {
+        font-size: 1.1em;
+        width: auto;
+    }
+
+    .panel {
+        width: 1000px;
+    }
+
+    .event-panel {
+        height: 180px;
+    }
+
+    .staff-panel {
+        width: 30%;
+    }
+
+    .panel h1,
+    #the-games h1,
+    #staff-team h1,
+    #event-stats h1 {
+        font-size: 3em;
+    }
+
+    #the-games,
+    #staff-team,
+    #event-stats {
+        width: 1000px;
+    }
+
+    .game-panel {
+        height: 340px;
+    }
+
+    .game-panel-info {
+        font-size: 0.9em;
+    }
+
+    #article-body {
+        width: 1000px;
+    }
+}
+
+@media screen and (min-width: 1328px) {
+
+    /* Stats Sheets */
+    #leaderboards {
+        text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 5em auto;
+        padding: 2em;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2em;
+        backdrop-filter: saturate(500%);
+        box-shadow: inset 0 0 2em 0 white;
+        transform: scale(1.0);
+        transition: ease-in-out 0.2s;
+        font-family: Magoat;
+        text-align: left;
+        color: white;
+        font-size: 0.8em;
+    }
+
+    #leaderboards .team-images {
+        margin-left: 10px;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    #leaderboards h2 {
+        font-size: 4em;
+        margin-bottom: 0.5em;
+        text-align: center;
+        color: white;
+    }
+
+    #leaderboards .tables {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        /* two columns for team/player */
+        grid-template-rows: 1fr;
+        font-size: 1.2em;
+        gap: 1rem;
+    }
+
+    #leaderboards .tables article {
+        max-height: 670px;
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+    }
+
+    #leaderboards .scores-list {
+        overflow-y: auto;
+        box-sizing: border-box;
+        padding-right: 1em;
+
+        /* Firefox scrollbar */
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.4) rgba(255, 255, 255, 0.1);
+    }
+
+    #leaderboards .scores-list .row {
+        margin: 0.4em 0;
+    }
+
+
+    #leaderboards article {
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2em;
+        padding: 2em;
+        box-shadow: inset 0 0 2em 0 white;
+        transition: ease-in-out 0.2s;
+    }
+
+    #leaderboards article h3 {
+        margin-bottom: 1em;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    #leaderboards .row {
+        display: grid;
+        grid-template-columns: 40px 37px 1fr 100px;
+        /* # | Name | Points */
+        padding: 1em;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 1em;
+        margin-top: 0.4em;
+        align-items: center;
+    }
+
+    #leaderboards .header {
+        grid-template-columns: 40px 1fr 100px;
+        /* # | Name | Points */
+    }
+
+    #leaderboards .team-leaderboard .row {
+        grid-template-columns: 40px 1fr 121px 75px;
+    }
+
+    #leaderboards .team-leaderboard .header {
+        grid-template-columns: 40px 1fr 100px;
+    }
+
+    #leaderboards .team-leaderboard .header div:nth-child(3) {
+        text-align: right;
+        /* points column */
+    }
+
+
+    #leaderboards .row.header {
+        background-color: transparent;
+    }
+
+    #leaderboards .player-leaderboard .row div:nth-child(3) {
+        padding-left: 0.5em;
+    }
+
+    #leaderboards .player-leaderboard .row div:nth-child(4),
+    #leaderboards .team-leaderboard .row div:nth-child(4) {
+        text-align: right;
+        /* points column */
+    }
 }
