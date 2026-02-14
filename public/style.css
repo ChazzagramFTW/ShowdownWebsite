@@ -240,7 +240,7 @@ p {
 }
 
 .panel {
-    width: 400px;
+    width: 350px;
     margin: 5em auto;
     padding: 1em;
 
@@ -332,7 +332,7 @@ p {
 }
 
 #staff-team .staff-panel h1 {
-    font-size: 1.3em;
+    font-size: 1.2em;
     padding-top: 0.5em;
     padding-bottom: 0;
     letter-spacing: 0.2ch;
@@ -428,7 +428,7 @@ p {
 #the-games,
 #staff-team,
 #event-stats {
-    width: 400px;
+    width: 350px;
     margin: 5em auto;
 }
 
@@ -586,6 +586,7 @@ footer ul {
 
 footer a {
     background-color: transparent;
+    font-size: 0.8em;
     box-shadow: none;
     padding: 0;
     font-family: Magoat;
