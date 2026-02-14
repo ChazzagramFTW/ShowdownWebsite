@@ -212,7 +212,7 @@ p {
     height: 400px;
     background-image: url("libs/2026backdrop.png");
     background-size: cover;
-    background-position: center;
+    background-position: top;
 }
 
 #feature h1 {
@@ -855,6 +855,10 @@ figure img {
         height: 600px;
     }
 
+    #feature h2 {
+        font-size: 1.6em;
+    }
+
     #feature img {
         width: 500px;
     }
@@ -1084,6 +1088,10 @@ figure img {
     .desktop-nav a {
         font-size: 1.1em;
         width: auto;
+    }
+
+    #feature h2 {
+        font-size: 2em;
     }
 
     .panel {
