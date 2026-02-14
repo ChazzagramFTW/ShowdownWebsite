@@ -713,7 +713,7 @@ figure img {
 }
 
 #leaderboards .tables article {
-    max-height: 690px;
+    max-height: 430px;
     display: flex;
     flex-direction: column;
     padding: 1em;
@@ -750,7 +750,7 @@ figure img {
 
 #leaderboards .row {
     display: grid;
-    grid-template-columns: 20px 25px 1fr 100px;
+    grid-template-columns: 20px 25px 1fr 60px;
     /* # | Name | Points */
     padding: 1em;
     font-size: 0.7em;
@@ -766,16 +766,16 @@ figure img {
 }
 
 #leaderboards .team-leaderboard .row {
-    grid-template-columns: 20px 1fr 55px 60px;
+    grid-template-columns: 20px 1fr 60px;
     font-size: 0.7em;
 }
 
 #leaderboards .team-images {
     margin-left: 10px;
-    display: grid;
-    gap: 5px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: none;
+    /* gap: 5px; */
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr; */
 }
 
 #leaderboards .team-leaderboard .row img {
@@ -783,7 +783,7 @@ figure img {
 }
 
 #leaderboards .team-leaderboard .header {
-    grid-template-columns: 20px 1fr 100px;
+    grid-template-columns: 20px 1fr 60px;
 }
 
 #leaderboards .header div:nth-child(3) {
