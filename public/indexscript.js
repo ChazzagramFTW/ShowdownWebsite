@@ -7,7 +7,7 @@ function navHighlighter() {
 
   sections.forEach(section => {
     const sectionHeight = section.offsetHeight;
-    const sectionTop = section.offsetTop - 100; // adjust for header
+    const sectionTop = section.offsetTop - 150; // adjust for header
     const sectionId = section.getAttribute("id");
 
     // Match links that end with the section hash
