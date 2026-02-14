@@ -16,9 +16,12 @@ if (!uri) {
 // Serve static files from 'public' folder
 app.use(express.static(path.join(__dirname, "public")));
 
-// Example route
-app.get("/hello", (req, res) => {
-  res.send("This is the hello response");
+app.get('/stats', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'eventstats.html'));
+});
+
+app.get('/news', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'article.html'));
 });
 
 // Health check for Render
