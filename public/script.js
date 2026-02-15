@@ -57,7 +57,7 @@ options.forEach(option => {
 
 playerTeamHeads.forEach(head => {
   head.addEventListener('click', () => {
-    const name = head.getAttribute('alt'); // get player name from alt
+    const name = head.alt; // get player name from alt
     if (!name) return;
 
     window.location.href = `/player/${name}`;

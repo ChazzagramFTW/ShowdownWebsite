@@ -843,9 +843,9 @@ figure img {
 }
 
 #leaderboards .row img:hover {
-    transform: scale(1.4);
+    transform: scale(1.3);
     cursor: pointer;
-    border: solid white 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 
