@@ -72,7 +72,7 @@ async function startServer() {
     });
 
     app.get("/api/player/:name", async (req, res) => {
-    const playerName = req.params.name.toLowerCase();
+    const playerName = req.params.name;
 
     try {
       // Fetch all events from MongoDB
@@ -89,7 +89,7 @@ async function startServer() {
 
           // Find this player
           const index = sortedPlayers.findIndex(
-            player => player.player_name.toLowerCase() === playerName
+            player => player.player_name === playerName
           );
 
           if (index !== -1) {
