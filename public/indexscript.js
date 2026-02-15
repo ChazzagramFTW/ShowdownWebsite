@@ -49,7 +49,7 @@ searchInput.addEventListener("input", async () => {
     suggestionsBox.innerHTML = "";
     players.forEach(player => {
         const div = document.createElement("div");
-        div.innerHTML = `<img src="https://minotar.net/helm/${player.player_name}/24.png" alt="${player._id}" class="team-player-img"><p>${player._id}</p>`
+        div.innerHTML = `<img src="https://minotar.net/helm/${player._id}/24.png" alt="${player._id}" class="team-player-img"><p>${player._id}</p>`
         div.style.padding = "8px";
         div.style.cursor = "pointer";
         div.addEventListener("click", () => {
