@@ -24,15 +24,19 @@ if (window.location.pathname === "/lads") {
 document.addEventListener("DOMContentLoaded", function () {
 
     const selectedPanel = document.querySelector(".selected img");
+
+    if (defaultEvent === "Showdown X Lads") {
+        selectedPanel.src = "libs/showdownlads.png";
+        selectedPanel.alt = "Showdown X Lads";
+        return;
+    }
+    
     const options = document.querySelectorAll(".option");
 
     options.forEach(option => {
         if (option.dataset.event === defaultEvent) {
-            const newSrc = option.dataset.src;
-            const newAlt = option.querySelector("img").alt;
-
-            selectedPanel.src = newSrc;
-            selectedPanel.alt = newAlt;
+            selectedPanel.src = option.dataset.src;
+            selectedPanel.alt = option.querySelector("img").alt;
         }
     });
 });
