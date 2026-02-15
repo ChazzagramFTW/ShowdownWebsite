@@ -83,13 +83,9 @@ async function startServer() {
       events.forEach(season => {
         if (Array.isArray(season.player_leaderboard)) {
           // Sort players by points descending
-          const sortedPlayers = [...season.player_leaderboard].sort(
-            (a, b) => b.points - a.points
-          );
-
-          // Find this player
-          const index = sortedPlayers.findIndex(
-            player => player.player_name == playerName
+          const players = season.player_leaderboard;
+          const index = players.findIndex(
+            player => player.player_name.trim().toLowerCase() === playerNameNormalized
           );
 
           if (index !== -1) {
