@@ -1251,7 +1251,7 @@ figure img {
         display: flex;
         gap: 1.1em;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-evenly;
     }
 
     #skin-container {
@@ -1303,7 +1303,7 @@ figure img {
 
     .player-info-stuff .rows {
         max-height: 170px;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
     .player-info-stuff .row {

@@ -83,6 +83,8 @@ async function startServer() {
 
         const seasons = data[0].seasons;
 
+        const teamInfo = data[0].team_info;
+
         seasons.forEach(season => {
           if (Array.isArray(season.player_leaderboard)) {
             // Sort players by points descending
@@ -94,9 +96,15 @@ async function startServer() {
             if (index !== -1) {
               const playerEntry = players[index];
 
+              const teamEntry = teamInfo.find(
+                t => t.team_name === playerEntry.team
+              );
+              const teamColor = teamEntry ? teamEntry.team_color : "#ffffff";
+
               eventsPlayed.push({
                 season_name: season.season_name,
                 team: playerEntry.team,
+                team_color: teamColor,
                 placement: index + 1,
                 points: playerEntry.points
               });

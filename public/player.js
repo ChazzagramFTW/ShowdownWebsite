@@ -67,8 +67,8 @@ async function loadPlayerData(playerName) {
       row.classList.add("row");
       row.innerHTML = `
         <div>${event.season_name}</div>
-        <div>${event.team}</div>
-        <div>${event.placement}</div>
+        <div style="color: ${team_color};">${event.team}</div>
+        <div>#${event.placement}</div>
         <div>${event.points}</div>
       `;
       rowBox.appendChild(row);
