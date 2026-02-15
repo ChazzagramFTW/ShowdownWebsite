@@ -49,8 +49,8 @@ searchInput.addEventListener("input", async () => {
     suggestionsBox.innerHTML = "";
     players.forEach(player => {
         const div = document.createElement("div");
-        div.textContent = player._id; // player name
-        div.style.padding = "5px";
+        div.innerHTML = `<img src="https://minotar.net/helm/${player.player_name}/24.png" alt="${player._id}" class="team-player-img"><p>${player._id}</p>`
+        div.style.padding = "8px";
         div.style.cursor = "pointer";
         div.addEventListener("click", () => {
             searchInput.value = player._id;

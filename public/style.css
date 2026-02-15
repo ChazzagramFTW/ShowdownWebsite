@@ -87,14 +87,41 @@ nav input {
 }
 
 #suggestions {
-    display: none; 
-    border: 1px solid #ccc; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    width: 247px;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+    margin-top: 0.5em;
     max-height: 200px; 
     overflow-y: auto; 
     position: absolute; 
-    background: white;
-    width: 200px;
+    background-color: rgba(255,255,255,0.9);
 }
+
+#suggestions p {
+    width: min-content;
+    padding: 0;
+    color: black;
+}
+
+#suggestions img {
+    width: 24px;
+    height: 24px;
+}
+
+#suggestions div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+}
+
+#suggestions div:hover {
+    background-color: rgba(197, 197, 197, 0.9);
+}
+
 
 .mobile-nav {
     width: min-content;
@@ -975,6 +1002,23 @@ figure img {
         font-size: 0.8em;
     }
 
+    #suggestions {
+        font-size: 0.7em;
+        width: 140px;
+        border: 1px solid #ccc; 
+        max-height: 200px; 
+        overflow-y: auto; 
+        position: absolute; 
+        font-weight: bold;
+        border-radius: 0.5em;
+        margin-top: 0.5em;
+    }
+
+    #suggestions img {
+    width: 20px;
+    height: 20px;
+}
+
     .mobile-nav {
         display: none;
     }
@@ -1398,6 +1442,18 @@ figure img {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         font-size: 0.9em;
+    }
+
+    #suggestions {
+        font-size: 1em;
+        width: 200px;
+        border: 1px solid #ccc; 
+        max-height: 200px; 
+        overflow-y: auto; 
+        position: absolute; 
+        font-weight: bold;
+        border-radius: 0.5em;
+        margin-top: 0.5em;
     }
 
     .desktop-nav a {
