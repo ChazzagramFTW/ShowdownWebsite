@@ -89,7 +89,7 @@ async function startServer() {
 
           // Find this player
           const index = sortedPlayers.findIndex(
-            player => player.player_name === playerName
+            player => player.player_name == playerName
           );
 
           if (index !== -1) {
