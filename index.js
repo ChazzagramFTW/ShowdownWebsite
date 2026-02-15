@@ -72,60 +72,60 @@ async function startServer() {
     });
 
     app.get("/api/player/:name", async (req, res) => {
-    const playerName = req.params.name;
+      const playerName = req.params.name;
 
-    try {
-      // Fetch all events from MongoDB
-      const data = await collection.find({}).toArray();
+      try {
+        // Fetch all events from MongoDB
+        const data = await collection.find({}).toArray();
 
-      const eventsPlayed = [];
+        const eventsPlayed = [];
 
-      const seasons = data[0].seasons;
+        const seasons = data.seasons;
 
-      seasons.forEach(season => {
-        if (Array.isArray(season.player_leaderboard)) {
-          // Sort players by points descending
-          const players = season.player_leaderboard;
-          const index = players.findIndex(
-            player => player.player_name.trim().toLowerCase() === playerNameNormalized
-          );
+        seasons.forEach(season => {
+          if (Array.isArray(season.player_leaderboard)) {
+            // Sort players by points descending
+            const players = season.player_leaderboard;
+            const index = players.findIndex(
+              player => player.player_name.trim().toLowerCase() === playerNameNormalized
+            );
 
-          if (index !== -1) {
-            const playerEntry = sortedPlayers[index];
+            if (index !== -1) {
+              const playerEntry = sortedPlayers[index];
 
-            eventsPlayed.push({
-              season_name: season.season_name,
-              team: playerEntry.team,
-              placement: index + 1,
-              points: playerEntry.points
-            });
+              eventsPlayed.push({
+                season_name: season.season_name,
+                team: playerEntry.team,
+                placement: index + 1,
+                points: playerEntry.points
+              });
+            }
           }
-        }
-      });
+        });
 
-      // Return result
-      res.json({
-        player: playerName,
-        total_events: eventsPlayed.length,
-        events: eventsPlayed
-      });
+        // Return result
+        res.json({
+          player: playerName,
+          total_events: eventsPlayed.length,
+          events: eventsPlayed
+        });
+
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Database error" });
+      }
+    });
+
+    // Start the server **once** with dynamic port
+    const PORT = process.env.PORT || 3000;
+    app.listen(PORT, () => {
+      console.log(`Server running at http://localhost:${PORT}`);
+    });
 
     } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: "Database error" });
+      console.error("Failed to connect to MongoDB:", err);
+      process.exit(1);
     }
-  });
-
-  // Start the server **once** with dynamic port
-  const PORT = process.env.PORT || 3000;
-  app.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}`);
-  });
-
-  } catch (err) {
-    console.error("Failed to connect to MongoDB:", err);
-    process.exit(1);
-  }
 }
 
 startServer();
