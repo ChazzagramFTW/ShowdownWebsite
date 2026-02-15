@@ -32,53 +32,6 @@ app.get('/player/:name', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'player.html'));
 });
 
-app.get("/api/player/:name", async (req, res) => {
-  const playerName = req.params.name.toLowerCase();
-
-  try {
-    // Fetch all events from MongoDB
-    const events = await collection.find({}).toArray();
-
-    const eventsPlayed = [];
-
-    events.forEach(season => {
-      if (Array.isArray(season.player_leaderboard)) {
-        // Sort players by points descending
-        const sortedPlayers = [...season.player_leaderboard].sort(
-          (a, b) => b.points - a.points
-        );
-
-        // Find this player
-        const index = sortedPlayers.findIndex(
-          player => player.player_name.toLowerCase() === playerName
-        );
-
-        if (index !== -1) {
-          const playerEntry = sortedPlayers[index];
-
-          eventsPlayed.push({
-            season_name: season.season_name,
-            team: playerEntry.team,
-            placement: index + 1,
-            points: playerEntry.points
-          });
-        }
-      }
-    });
-
-    // Return result
-    res.json({
-      player: playerName,
-      total_events: eventsPlayed.length,
-      events: eventsPlayed
-    });
-
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Database error" });
-  }
-});
-
 // Health check for Render
 app.get('/healthz', (req, res) => {
   res.status(200).send('OK');
