@@ -448,6 +448,25 @@ p {
     position: relative;
 }
 
+.game-panel-info .game-tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.4em;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-panel-info .game-tags p {
+    font-family: Arial;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    background-image: linear-gradient(rgb(255, 245, 106), rgba(255, 188, 65));
+    padding: 0.4em;
+    padding-left: 0.6em;
+    text-align: center;
+    border-radius: 1em;
+}
+
 #the-games .game-panel:nth-child(even) .game-panel-info {
     top: 0;
     left: 0;

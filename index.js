@@ -24,6 +24,10 @@ app.get('/news', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'article.html'));
 });
 
+app.get('/lads', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'eventstats.html'));
+});
+
 // Health check for Render
 app.get('/healthz', (req, res) => {
   res.status(200).send('OK');

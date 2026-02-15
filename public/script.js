@@ -4,6 +4,7 @@ const selected = dropdown.querySelector('.selected');
 const optionsContainer = dropdown.querySelector('.options');
 const options = dropdown.querySelectorAll('.option');
 const container = document.getElementById("leaderboards");
+let defaultEvent = "Season One";
 
 const menuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -14,6 +15,26 @@ menuBtn.addEventListener('click', () => {
 
 selected.addEventListener('click', () => {
     optionsContainer.style.display = optionsContainer.style.display === 'none' ? 'block' : 'none';
+});
+
+if (window.location.pathname === "/lads") {
+    defaultEvent = "Showdown X Lads";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const selectedPanel = document.querySelector(".selected img");
+    const options = document.querySelectorAll(".option");
+
+    options.forEach(option => {
+        if (option.dataset.event === defaultEvent) {
+            const newSrc = option.dataset.src;
+            const newAlt = option.querySelector("img").alt;
+
+            selectedPanel.src = newSrc;
+            selectedPanel.alt = newAlt;
+        }
+    });
 });
 
 options.forEach(option => {

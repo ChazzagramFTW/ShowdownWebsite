@@ -143,21 +143,38 @@
         }
       ],
       "player_leaderboard": [
-        {
-          "player_name": "Chazzagram",
-          "team": "Ruby Raiders",
-          "points": 64
-        },
-        {
-          "player_name": "Chazzagram",
-          "team": "Ruby Raiders",
-          "points": 62
-        },
-        {
-          "player_name": "Chazzagram",
-          "team": "Ruby Raiders",
-          "points": 60
-        }
+            { "player_name": "dolphinman_rl", "team": "Kyanite Killers", "points": 2840 },
+            { "player_name": "Kaelan_", "team": "Ruby Raiders", "points": 2663 },
+            { "player_name": "Pineconen", "team": "Amber Ambushers", "points": 2542 },
+            { "player_name": "Finmin_", "team": "Diamond Destroyers", "points": 2485 },
+            { "player_name": "BryTheGuyy", "team": "Sapphire Soldiers", "points": 2414 },
+            { "player_name": "wheresmyyjules", "team": "Kyanite Killers", "points": 2273 },
+            { "player_name": "WeChokeOnMilk", "team": "Amber Ambushers", "points": 2230 },
+            { "player_name": "Shalomanon", "team": "Diamond Destroyers", "points": 2165 },
+            { "player_name": "NominalGravy", "team": "Ruby Raiders", "points": 2137 },
+            { "player_name": "MCmorganplayz", "team": "Smithsonite Slayers", "points": 2099 },
+            { "player_name": "TayLmao", "team": "Crystal Crashers", "points": 1983 },
+            { "player_name": "MrPrawes", "team": "Sapphire Soldiers", "points": 1960 },
+            { "player_name": "DaniMilksops", "team": "Sapphire Soldiers", "points": 1925 },
+            { "player_name": "MCBIGMACPLAYZ", "team": "Crystal Crashers", "points": 1905 },
+            { "player_name": "TinyRiotx", "team": "Crystal Crashers", "points": 1897 },
+            { "player_name": "Narnia", "team": "Ruby Raiders", "points": 1896 },
+            { "player_name": "PortalMG", "team": "Kyanite Killers", "points": 1874 },
+            { "player_name": "ItsMeMarshy_", "team": "Diamond Destroyers", "points": 1869 },
+            { "player_name": "olivehoodies", "team": "Topaz Troopers", "points": 1838 },
+            { "player_name": "MomusMC", "team": "Topaz Troopers", "points": 1817 },
+            { "player_name": "DebbieMorales", "team": "Diamond Destroyers", "points": 1782 },
+            { "player_name": "RemoteBirch5", "team": "Ruby Raiders", "points": 1628 },
+            { "player_name": "CaptainAJX", "team": "Smithsonite Slayers", "points": 1623 },
+            { "player_name": "Chazzagram", "team": "Smithsonite Slayers", "points": 1595 },
+            { "player_name": "oh_its_Harry", "team": "Smithsonite Slayers", "points": 1546 },
+            { "player_name": "KikiIsOnline", "team": "Sapphire Soldiers", "points": 1440 },
+            { "player_name": "wooleyLIVE", "team": "Topaz Troopers", "points": 1396 },
+            { "player_name": "mayplebean", "team": "Kyanite Killers", "points": 1384 },
+            { "player_name": "pinkfluffyseal", "team": "Amber Ambushers", "points": 1359 },
+            { "player_name": "moonyofthevalley", "team": "Amber Ambushers", "points": 1301 },
+            { "player_name": "erinreyn", "team": "Topaz Troopers", "points": 1285 },
+            { "player_name": "asifhunty", "team": "Crystal Crashers", "points": 1194 }
       ]
     },
     {
@@ -197,21 +214,38 @@
         }
         ],
         "player_leaderboard": [
-        {
-            "player_name": "Chazzagram",
-            "team": "Ruby Raiders",
-            "points": 64
-        },
-        {
-            "player_name": "Chazzagram",
-            "team": "Ruby Raiders",
-            "points": 62
-        },
-        {
-            "player_name": "Chazzagram",
-            "team": "Ruby Raiders",
-            "points": 60
-        }
+          { "player_name": "ItzIgglesPiggles", "team": "Topaz Troopers", "points": 2769 },
+          { "player_name": "Standen05", "team": "Topaz Troopers", "points": 2667 },
+          { "player_name": "CGQ_", "team": "Smithsonite Slayers", "points": 2599 },
+          { "player_name": "MxAero", "team": "Amber Ambushers", "points": 2392 },
+          { "player_name": "oSolar", "team": "Kyanite Killers", "points": 2284 },
+          { "player_name": "MudKryp", "team": "Ruby Raiders", "points": 2251 },
+          { "player_name": "MarcusDoesMC", "team": "Kyanite Killers", "points": 2237 },
+          { "player_name": "TayLmao", "team": "Smithsonite Slayers", "points": 2234 },
+          { "player_name": "Pineconen", "team": "Ruby Raiders", "points": 2175 },
+          { "player_name": "JackCas", "team": "Sapphire Soldiers", "points": 2171 },
+          { "player_name": "Adwertise", "team": "Diamond Destroyers", "points": 2159 },
+          { "player_name": "RiceInRealTime", "team": "Smithsonite Slayers", "points": 2099 },
+          { "player_name": "wheresmyyjules", "team": "Ruby Raiders", "points": 2057 },
+          { "player_name": "WeChokeOnMilk", "team": "Sapphire Soldiers", "points": 2052 },
+          { "player_name": "Running__", "team": "Crystal Crashers", "points": 2033 },
+          { "player_name": "WubDub_", "team": "Diamond Destroyers", "points": 1996 },
+          { "player_name": "FanboyEint", "team": "Amber Ambushers", "points": 1936 },
+          { "player_name": "Kaos21a", "team": "Kyanite Killers", "points": 1926 },
+          { "player_name": "Beauloon", "team": "Crystal Crashers", "points": 1865 },
+          { "player_name": "CaptainAJX", "team": "Kyanite Killers", "points": 1832 },
+          { "player_name": "pinkfluffyseal", "team": "Topaz Troopers", "points": 1773 },
+          { "player_name": "0nei", "team": "Crystal Crashers", "points": 1759 },
+          { "player_name": "Chandiggitydog", "team": "Diamond Destroyers", "points": 1728 },
+          { "player_name": "Vircon", "team": "Diamond Destroyers", "points": 1622 },
+          { "player_name": "AvaJC", "team": "Amber Ambushers", "points": 1479 },
+          { "player_name": "Servver", "team": "Amber Ambushers", "points": 1462 },
+          { "player_name": "onyxedd", "team": "Crystal Crashers", "points": 1444 },
+          { "player_name": "Lumastar", "team": "Ruby Raiders", "points": 1431 },
+          { "player_name": "LemonPhroggg", "team": "Topaz Troopers", "points": 1371 },
+          { "player_name": "TitaniumZombie", "team": "Sapphire Soldiers", "points": 1323 },
+          { "player_name": "Maezes", "team": "Smithsonite Slayers", "points": 1275 },
+          { "player_name": "CHALLY073763", "team": "Sapphire Soldiers", "points": 1196 }
         ]
     },
     {
@@ -251,21 +285,38 @@
         }
       ],
       "player_leaderboard": [
-        {
-          "player_name": "Chazzagram",
-          "team": "Ruby Raiders",
-          "points": 64
-        },
-        {
-          "player_name": "Chazzagram",
-          "team": "Ruby Raiders",
-          "points": 62
-        },
-        {
-          "player_name": "Chazzagram",
-          "team": "Ruby Raiders",
-          "points": 60
-        }
+        { "player_name": "CGQ_", "team": "Smithsonite Slayers", "points": 2540 },
+        { "player_name": "Kaelan_", "team": "Ruby Raiders", "points": 2443 },
+        { "player_name": "KatsExistance", "team": "Smithsonite Slayers", "points": 2429 },
+        { "player_name": "Kelawesome", "team": "Sapphire Soldiers", "points": 2376 },
+        { "player_name": "CxrtxR", "team": "Kyanite Killers", "points": 2236 },
+        { "player_name": "Bruberry_", "team": "Diamond Destroyers", "points": 2118 },
+        { "player_name": "mightybrothers1", "team": "Amber Ambushers", "points": 2082 },
+        { "player_name": "_Brinkz", "team": "Crystal Crashers", "points": 2052 },
+        { "player_name": "Beauloon", "team": "Diamond Destroyers", "points": 2037 },
+        { "player_name": "Narnia", "team": "Diamond Destroyers", "points": 2033 },
+        { "player_name": "ItsMeMarshy_", "team": "Ruby Raiders", "points": 1917 },
+        { "player_name": "TooFFion", "team": "Topaz Troopers", "points": 1890 },
+        { "player_name": "Pineconen", "team": "Topaz Troopers", "points": 1875 },
+        { "player_name": "Trualist", "team": "Amber Ambushers", "points": 1850 },
+        { "player_name": "Lunalotll", "team": "Smithsonite Slayers", "points": 1825 },
+        { "player_name": "Chandiggitydog", "team": "Kyanite Killers", "points": 1819 },
+        { "player_name": "HiImCC", "team": "Crystal Crashers", "points": 1914 },
+        { "player_name": "LynxyLiam", "team": "Ruby Raiders", "points": 1821 },
+        { "player_name": "CaptainAJX", "team": "Crystal Crashers", "points": 1708 },
+        { "player_name": "Doovid_", "team": "Ruby Raiders", "points": 1736 },
+        { "player_name": "AvaJC", "team": "Sapphire Soldiers", "points": 1727 },
+        { "player_name": "Clovish", "team": "Smithsonite Slayers", "points": 1714 },
+        { "player_name": "ImElz", "team": "Sapphire Soldiers", "points": 1702 },
+        { "player_name": "ThatDarkPhoenix", "team": "Amber Ambushers", "points": 1644 },
+        { "player_name": "DebbieMorales", "team": "Crystal Crashers", "points": 1643 },
+        { "player_name": "lauriethetim", "team": "Sapphire Soldiers", "points": 1503 },
+        { "player_name": "Galaxushii", "team": "Kyanite Killers", "points": 1451 },
+        { "player_name": "hydraticc", "team": "Diamond Destroyers", "points": 1428 },
+        { "player_name": "LemonPhroggg", "team": "Amber Ambushers", "points": 1413 },
+        { "player_name": "katevena", "team": "Topaz Troopers", "points": 1294 },
+        { "player_name": "Pandastra", "team": "Topaz Troopers", "points": 1212 },
+        { "player_name": "Wymsicaal", "team": "Kyanite Killers", "points": 1103 }
       ]
     },
     {
