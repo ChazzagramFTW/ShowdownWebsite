@@ -7,6 +7,8 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const uri = process.env.MONGO_URI;
 
+const uuidCache = {}; // key: playerName, value: UUID
+
 // Fail fast if MONGO_URI is missing
 if (!uri) {
   console.error("ERROR: MONGO_URI is undefined. Set it in your .env or Render environment variables.");
@@ -68,6 +70,25 @@ async function startServer() {
       } catch (err) {
         console.error(err);
         res.status(500).send("Database error");
+      }
+    });
+
+    app.get('/api/uuid/:name', async (req, res) => {
+      const name = req.params.name.toLowerCase();
+
+      if (uuidCache[name]) return res.json({ uuid: uuidCache[name] });
+
+      try {
+        const response = await fetch(`https://api.mojang.com/users/profiles/minecraft/${name}`);
+        if (!response.ok) return res.status(404).json({ error: 'Player not found' });
+        const data = await response.json();
+        if (!data?.id) return res.status(404).json({ error: 'Player not found' });
+
+        uuidCache[name] = data.id; // cache it
+        res.json({ uuid: data.id });
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Server error' });
       }
     });
 

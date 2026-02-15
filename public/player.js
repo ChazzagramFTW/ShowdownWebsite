@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function loadPlayerData(playerName) {
   try {
-    const mojangResponse = await fetch(`https://api.mojang.com/users/profiles/minecraft/${playerName}`);
-    if (!mojangResponse.ok) {
-      console.error("Mojang fetch failed:", mojangResponse.status);
+    const uuidResponse = await fetch(`/api/uuid/${playerName}`);
+    if (!uuidResponse.ok) {
+      container.innerHTML = `<h1>Player "${playerName}" not found</h1>`;
       return;
     }
-    const mojangData = await mojangResponse.json();
-    const playerUUID = mojangData.id; // UUID without dashes
+    const uuidData = await uuidResponse.json();
+    const playerUUID = uuidData.uuid;
 
     const response = await fetch(`/api/player/${playerName}`);
     if (!response.ok) {
