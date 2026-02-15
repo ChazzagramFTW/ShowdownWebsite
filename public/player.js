@@ -2,6 +2,8 @@ const pathParts = window.location.pathname.split('/');
 const playerName = pathParts[2];
 const container = document.getElementById("player-info");
 const poses = ["default", "marching", "walking", "crouching", "ultimate", "pointing", "kicking", "lunging"];
+const searchInput = document.getElementById("player-search");
+const suggestionsBox = document.getElementById("suggestions");
 
 document.addEventListener("DOMContentLoaded", function () {
   if (!playerName) {
@@ -91,4 +93,44 @@ async function loadPlayerData(playerName) {
   } catch (error) {
     console.error("Error loading player:", error);
   }
+}
+
+  searchInput.addEventListener("input", async () => {
+    const query = searchInput.value.trim();
+    if (!query) {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    const res = await fetch(`/api/players/search?q=${encodeURIComponent(query)}`);
+    const players = await res.json();
+
+    if (!players.length) {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    suggestionsBox.innerHTML = "";
+    players.forEach(player => {
+        const div = document.createElement("div");
+        div.innerHTML = `<img src="https://minotar.net/helm/${player._id}/24.png" alt="${player._id}" class="team-player-img"><p>${player._id}</p>`
+        div.style.padding = "8px";
+        div.style.cursor = "pointer";
+        div.addEventListener("click", () => {
+            searchInput.value = player._id;
+            suggestionsBox.style.display = "none";
+            window.location.href = `/player/${encodeURIComponent(player._id)}`;
+        });
+        suggestionsBox.appendChild(div);
+    });
+
+    suggestionsBox.style.display = "block";
+});
+
+// Hide suggestions if clicked outside
+document.addEventListener("click", e => {
+    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = "none";
+    }
+});
 }
