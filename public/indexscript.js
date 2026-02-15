@@ -1,4 +1,6 @@
 const sections = document.querySelectorAll("main section[id]");
+const searchInput = document.getElementById("player-search");
+const suggestionsBox = document.getElementById("suggestions");
 
 window.addEventListener("scroll", navHighlighter);
 
@@ -27,4 +29,43 @@ const mobileMenu = document.getElementById('mobile-menu');
 
 menuBtn.addEventListener('click', () => {
   mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
+searchInput.addEventListener("input", async () => {
+    const query = searchInput.value.trim();
+    if (!query) {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    const res = await fetch(`/api/players/search?q=${encodeURIComponent(query)}`);
+    const players = await res.json();
+
+    if (!players.length) {
+        suggestionsBox.style.display = "none";
+        return;
+    }
+
+    suggestionsBox.innerHTML = "";
+    players.forEach(player => {
+        const div = document.createElement("div");
+        div.textContent = player._id; // player name
+        div.style.padding = "5px";
+        div.style.cursor = "pointer";
+        div.addEventListener("click", () => {
+            searchInput.value = player._id;
+            suggestionsBox.style.display = "none";
+            window.location.href = `/player/${encodeURIComponent(player._id)}`;
+        });
+        suggestionsBox.appendChild(div);
+    });
+
+    suggestionsBox.style.display = "block";
+});
+
+// Hide suggestions if clicked outside
+document.addEventListener("click", e => {
+    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = "none";
+    }
 });

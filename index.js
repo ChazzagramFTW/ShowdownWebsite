@@ -39,6 +39,30 @@ app.get('/healthz', (req, res) => {
   res.status(200).send('OK');
 });
 
+async function searchPlayers(query) {
+  await client.connect();
+  const database = client.db("Showdown");
+  const collection = database.collection("Event Stats");
+
+  const regex = new RegExp(query, "i");
+
+  const players = await collection.aggregate([
+      { $unwind: "$seasons" },
+      { $unwind: "$seasons.player_leaderboard" },
+      { $match: { "seasons.player_leaderboard.player_name": { $regex: regex } } },
+      { $group: {
+          _id: "$seasons.player_leaderboard.player_name",
+          team: { $first: "$seasons.player_leaderboard.team" }
+        }
+      },
+      { $project: { _id: 1, team: 1 } },
+      { $sort: { _id: 1 } },
+      { $limit: 10 }
+  ]).toArray();
+
+  return players;
+}
+
 // MongoDB client
 
 const client = new MongoClient(uri, {
@@ -60,7 +84,20 @@ async function startServer() {
     console.log("Connected to MongoDB");
 
     const database = client.db("Showdown");
-    collection = database.collection("Event Stats"); // avoid spaces in collection name
+    collection = database.collection("Event Stats");
+
+    app.get("/api/players/search", async (req, res) => {
+        const { q } = req.query;
+        if (!q) return res.json([]);
+
+        try {
+            const players = await searchPlayers(q);
+            res.json(players);
+        } catch (err) {
+            console.error(err);
+            res.status(500).send("Error searching players");
+        }
+    });
 
     // API route
     app.get("/api/events", async (req, res) => {
@@ -108,7 +145,6 @@ async function startServer() {
 
         seasons.forEach(season => {
           if (Array.isArray(season.player_leaderboard)) {
-            // Sort players by points descending
             const players = season.player_leaderboard;
             const index = players.findIndex(
               player => player.player_name.trim().toLowerCase() === playerNameNormalized
