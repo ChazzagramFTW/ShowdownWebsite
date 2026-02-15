@@ -837,6 +837,17 @@ figure img {
     /* points column */
 }
 
+#leaderboards .row img {
+    transform: scale(1.0);
+    cursor: default;
+}
+
+#leaderboards .row img:hover {
+    transform: scale(1.4);
+    cursor: pointer;
+    border: solid white 2px;
+}
+
 
 #player-info {
     color: white;
