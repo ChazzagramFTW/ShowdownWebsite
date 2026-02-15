@@ -76,11 +76,13 @@ async function startServer() {
 
     try {
       // Fetch all events from MongoDB
-      const events = await collection.find({}).toArray();
+      const data = await collection.find({}).toArray();
 
       const eventsPlayed = [];
 
-      events.forEach(season => {
+      const seasons = data[0].seasons;
+
+      seasons.forEach(season => {
         if (Array.isArray(season.player_leaderboard)) {
           // Sort players by points descending
           const players = season.player_leaderboard;
