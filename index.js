@@ -28,6 +28,48 @@ app.get('/lads', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'eventstats.html'));
 });
 
+app.get('/api/player/:name', (req, res) => {
+  const playerName = req.params.name.toLowerCase();
+  const seasons = data[0].seasons;
+
+  const eventsPlayed = [];
+
+  seasons.forEach(season => {
+    if (Array.isArray(season.player_leaderboard)) {
+      
+      // Sort players by points
+      const sortedPlayers = [...season.player_leaderboard].sort(
+        (a, b) => b.points - a.points
+      );
+
+      const index = sortedPlayers.findIndex(
+        player => player.player_name.toLowerCase() === playerName
+      );
+
+      if (index !== -1) {
+        const playerEntry = sortedPlayers[index];
+
+        eventsPlayed.push({
+          season_name: season.season_name,
+          team: playerEntry.team,
+          placement: index + 1,
+          points: playerEntry.points
+        });
+      }
+    }
+  });
+
+  res.json({
+    player: playerName,
+    total_events: eventsPlayed.length,
+    events: eventsPlayed
+  });
+});
+
+app.get('/player/:name', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'player.html'));
+});
+
 // Health check for Render
 app.get('/healthz', (req, res) => {
   res.status(200).send('OK');
