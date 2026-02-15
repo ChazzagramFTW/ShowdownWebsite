@@ -30,7 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
         selectedPanel.alt = "Showdown X Lads";
         return;
     }
-    
+
+    loadLeaderboards(defaultEvent);
+
     const options = document.querySelectorAll(".option");
 
     options.forEach(option => {
@@ -186,7 +188,3 @@ async function loadLeaderboards(event) {
     console.error("Error loading leaderboards:", err);
   }
 }
-
-
-
-loadLeaderboards("Season One");
