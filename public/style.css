@@ -861,9 +861,8 @@ figure img {
 }
 
 #skin-container {
-    height: 100%;
-    overflow: visible;
-    object-fit: cover;
+    width: 100%;
+    text-align: center;
 }
 
 #skin-container img {
@@ -1275,7 +1274,9 @@ figure img {
     }
 
     #skin-container img {
-        width: 150px;
+        height: 100%;
+        overflow: visible;
+        object-fit: cover;
     }
 
     .player-info-stuff h1 {
