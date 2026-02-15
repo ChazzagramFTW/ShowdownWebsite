@@ -861,8 +861,9 @@ figure img {
 }
 
 #skin-container {
-    width: 100%;
-    text-align: center;
+    height: 100%;
+    overflow: visible;
+    object-fit: cover;
 }
 
 #skin-container img {
