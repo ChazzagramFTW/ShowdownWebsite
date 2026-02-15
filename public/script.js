@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (defaultEvent === "Showdown X Lads") {
         selectedPanel.src = "libs/showdownlads.png";
         selectedPanel.alt = "Showdown X Lads";
+        loadLeaderboards(defaultEvent);
         return;
     }
 

@@ -532,49 +532,56 @@ p {
 
 #bridge-builders {
     background-image: url("libs/bridgebg.png");
+        background-size: cover;
+    background-position-x: -15em;
 }
 
 #colour-dash {
     background-image: url("libs/colourdashbg.png");
-    background-position-y: -25em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #craftalot {
     background-image: url("libs/craftalotbg.png");
-    background-position-y: -10em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #gubgame {
     background-image: url("libs/gubbg.png");
-    background-position-y: -10em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #slime-golf {
     background-image: url("libs/slimebg.png");
-    background-position-y: -15em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #sg {
     background-image: url("libs/sgbg.png");
-    background-position-y: -15em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #zoomo-go {
     background-image: url("libs/zoomobg.png");
-    background-size: 100%;
-    background-position-y: -10em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #crumble-clash {
     background-image: url("libs/crumblebg.png");
-    background-size: 100%;
-    background-position-y: -10em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 #push-point {
     background-image: url("libs/pushpointbg.png");
-    background-size: 100%;
-    background-position-y: -10em;
+    background-size: cover;
+    background-position-x: -15em;
 }
 
 footer {
@@ -931,8 +938,48 @@ figure img {
 
     .game-panel-info {
         max-width: 50%;
-        font-size: 0.8em;
+        font-size: 0.75em;
         backdrop-filter: blur(1em);
+    }
+
+    .game-panel-info p {
+        font-size: 0.9em;
+    }
+
+    #bridge-builders {
+        background-position-x: 0em;
+    }
+
+    #colour-dash {
+        background-position-x: 0em;
+    }
+
+    #craftalot {
+        background-position-x: 0em;
+    }
+
+    #gubgame {
+        background-position-x: 0em;
+    }
+
+    #slime-golf {
+        background-position-x: 0em;
+    }
+
+    #sg {
+        background-position-x: 0em;
+    }
+
+    #zoomo-go {
+        background-position-x: 0em;
+    }
+
+    #crumble-clash {
+        background-position-x: 0em;
+    }
+
+    #push-point {
+        background-position-x: 0em;
     }
 
     footer {
@@ -1148,6 +1195,38 @@ figure img {
 
     .game-panel-info {
         font-size: 0.9em;
+    }
+
+    #colour-dash {
+        background-position-y: -5em;
+    }
+
+    #craftalot {
+        background-position-y: -5em;
+    }
+
+    #gubgame {
+        background-position-y: -2em;
+    }
+
+    #slime-golf {
+        background-position-y: -7em;
+    }
+
+    #sg {
+        background-position-y: -2em;
+    }
+
+    #zoomo-go {
+        background-position-y: -5em;
+    }
+
+    #crumble-clash {
+        background-position-y: -2em;
+    }
+
+    #push-point {
+        background-position-y: -2em;
     }
 
     #article-body {
