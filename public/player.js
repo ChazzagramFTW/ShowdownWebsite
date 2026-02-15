@@ -95,36 +95,36 @@ async function loadPlayerData(playerName) {
   }
 }
 
-  searchInput.addEventListener("input", async () => {
-    const query = searchInput.value.trim();
-    if (!query) {
-        suggestionsBox.style.display = "none";
-        return;
-    }
+searchInput.addEventListener("input", async () => {
+  const query = searchInput.value.trim();
+  if (!query) {
+      suggestionsBox.style.display = "none";
+      return;
+  }
 
-    const res = await fetch(`/api/players/search?q=${encodeURIComponent(query)}`);
-    const players = await res.json();
+  const res = await fetch(`/api/players/search?q=${encodeURIComponent(query)}`);
+  const players = await res.json();
 
-    if (!players.length) {
-        suggestionsBox.style.display = "none";
-        return;
-    }
+  if (!players.length) {
+      suggestionsBox.style.display = "none";
+      return;
+  }
 
-    suggestionsBox.innerHTML = "";
-    players.forEach(player => {
-        const div = document.createElement("div");
-        div.innerHTML = `<img src="https://minotar.net/helm/${player._id}/24.png" alt="${player._id}" class="team-player-img"><p>${player._id}</p>`
-        div.style.padding = "8px";
-        div.style.cursor = "pointer";
-        div.addEventListener("click", () => {
-            searchInput.value = player._id;
-            suggestionsBox.style.display = "none";
-            window.location.href = `/player/${encodeURIComponent(player._id)}`;
-        });
-        suggestionsBox.appendChild(div);
-    });
+  suggestionsBox.innerHTML = "";
+  players.forEach(player => {
+      const div = document.createElement("div");
+      div.innerHTML = `<img src="https://minotar.net/helm/${player._id}/24.png" alt="${player._id}" class="team-player-img"><p>${player._id}</p>`
+      div.style.padding = "8px";
+      div.style.cursor = "pointer";
+      div.addEventListener("click", () => {
+          searchInput.value = player._id;
+          suggestionsBox.style.display = "none";
+          window.location.href = `/player/${encodeURIComponent(player._id)}`;
+      });
+      suggestionsBox.appendChild(div);
+  });
 
-    suggestionsBox.style.display = "block";
+  suggestionsBox.style.display = "block";
 });
 
 // Hide suggestions if clicked outside
@@ -133,4 +133,3 @@ document.addEventListener("click", e => {
         suggestionsBox.style.display = "none";
     }
 });
-}
