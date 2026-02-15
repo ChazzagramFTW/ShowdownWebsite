@@ -73,25 +73,6 @@ async function startServer() {
       }
     });
 
-    app.get('/api/uuid/:name', async (req, res) => {
-      const name = req.params.name.toLowerCase();
-
-      if (uuidCache[name]) return res.json({ uuid: uuidCache[name] });
-
-      try {
-        const response = await fetch(`https://api.mojang.com/users/profiles/minecraft/${name}`);
-        if (!response.ok) return res.status(404).json({ error: 'Player not found' });
-        const data = await response.json();
-        if (!data?.id) return res.status(404).json({ error: 'Player not found' });
-
-        uuidCache[name] = data.id; // cache it
-        res.json({ uuid: data.id });
-      } catch (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Server error' });
-      }
-    });
-
     app.get("/api/player/:name", async (req, res) => {
       const playerName = req.params.name;
       const playerNameNormalized = playerName.trim().toLowerCase();

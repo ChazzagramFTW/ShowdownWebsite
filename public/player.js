@@ -13,14 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function loadPlayerData(playerName) {
   try {
-    const uuidResponse = await fetch(`/api/uuid/${playerName}`);
-    if (!uuidResponse.ok) {
-      container.innerHTML = `<h1>Player "${playerName}" not found</h1>`;
-      return;
-    }
-    const uuidData = await uuidResponse.json();
-    const playerUUID = uuidData.uuid;
-
     const response = await fetch(`/api/player/${playerName}`);
     if (!response.ok) {
       console.error("Fetch failed:", response.status);
@@ -37,7 +29,7 @@ async function loadPlayerData(playerName) {
     const pose = poses[randomIndex];
 
     const playerSkin = document.createElement("div");
-    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/${pose}/${playerUUID}/full" alt="${playerName}">`;
+    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/${pose}/${playerName}/full" alt="${playerName}">`;
     playerSkin.id = "skin-container";
     container.appendChild(playerSkin);
 
