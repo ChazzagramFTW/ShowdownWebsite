@@ -20,8 +20,6 @@ async function loadPlayerData(playerName) {
     const data = await response.json();
     console.log("Player data:", data);
 
-    const container = document.querySelector(".container");
-
     // Player name header
     const nameHeader = document.createElement("h1");
     nameHeader.textContent = playerName;
