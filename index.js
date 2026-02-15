@@ -28,46 +28,55 @@ app.get('/lads', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'eventstats.html'));
 });
 
-app.get('/api/player/:name', (req, res) => {
-  const playerName = req.params.name.toLowerCase();
-  const seasons = data[0].seasons;
-
-  const eventsPlayed = [];
-
-  seasons.forEach(season => {
-    if (Array.isArray(season.player_leaderboard)) {
-      
-      // Sort players by points
-      const sortedPlayers = [...season.player_leaderboard].sort(
-        (a, b) => b.points - a.points
-      );
-
-      const index = sortedPlayers.findIndex(
-        player => player.player_name.toLowerCase() === playerName
-      );
-
-      if (index !== -1) {
-        const playerEntry = sortedPlayers[index];
-
-        eventsPlayed.push({
-          season_name: season.season_name,
-          team: playerEntry.team,
-          placement: index + 1,
-          points: playerEntry.points
-        });
-      }
-    }
-  });
-
-  res.json({
-    player: playerName,
-    total_events: eventsPlayed.length,
-    events: eventsPlayed
-  });
-});
-
 app.get('/player/:name', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'player.html'));
+});
+
+app.get("/api/player/:name", async (req, res) => {
+  const playerName = req.params.name.toLowerCase();
+
+  try {
+    // Fetch all events from MongoDB
+    const events = await collection.find({}).toArray();
+
+    const eventsPlayed = [];
+
+    events.forEach(season => {
+      if (Array.isArray(season.player_leaderboard)) {
+        // Sort players by points descending
+        const sortedPlayers = [...season.player_leaderboard].sort(
+          (a, b) => b.points - a.points
+        );
+
+        // Find this player
+        const index = sortedPlayers.findIndex(
+          player => player.player_name.toLowerCase() === playerName
+        );
+
+        if (index !== -1) {
+          const playerEntry = sortedPlayers[index];
+
+          eventsPlayed.push({
+            season_name: season.season_name,
+            team: playerEntry.team,
+            placement: index + 1,
+            points: playerEntry.points
+          });
+        }
+      }
+    });
+
+    // Return result
+    res.json({
+      player: playerName,
+      total_events: eventsPlayed.length,
+      events: eventsPlayed
+    });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Database error" });
+  }
 });
 
 // Health check for Render
@@ -109,11 +118,58 @@ async function startServer() {
       }
     });
 
-    // Start the server **once** with dynamic port
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-      console.log(`Server running at http://localhost:${PORT}`);
-    });
+    app.get("/api/player/:name", async (req, res) => {
+    const playerName = req.params.name.toLowerCase();
+
+    try {
+      // Fetch all events from MongoDB
+      const events = await collection.find({}).toArray();
+
+      const eventsPlayed = [];
+
+      events.forEach(season => {
+        if (Array.isArray(season.player_leaderboard)) {
+          // Sort players by points descending
+          const sortedPlayers = [...season.player_leaderboard].sort(
+            (a, b) => b.points - a.points
+          );
+
+          // Find this player
+          const index = sortedPlayers.findIndex(
+            player => player.player_name.toLowerCase() === playerName
+          );
+
+          if (index !== -1) {
+            const playerEntry = sortedPlayers[index];
+
+            eventsPlayed.push({
+              season_name: season.season_name,
+              team: playerEntry.team,
+              placement: index + 1,
+              points: playerEntry.points
+            });
+          }
+        }
+      });
+
+      // Return result
+      res.json({
+        player: playerName,
+        total_events: eventsPlayed.length,
+        events: eventsPlayed
+      });
+
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ error: "Database error" });
+    }
+  });
+
+  // Start the server **once** with dynamic port
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
 
   } catch (err) {
     console.error("Failed to connect to MongoDB:", err);

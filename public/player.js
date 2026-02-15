@@ -2,20 +2,11 @@ const pathParts = window.location.pathname.split('/');
 const playerName = pathParts[2];
 const container = document.getElementById("player-info");
 
-fetch(`/api/player/${playerName}`)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error("Player not found");
-    }
-    return response.json();
-  })
-  .then(data => {
-    loadPlayerData(data.name);
-  })
-  .catch(error => {
-    document.body.innerHTML = "<h1>Player not found</h1>";
-  });
-
+if (!playerName) {
+  document.body.innerHTML = "<h1>No player specified</h1>";
+} else {
+  loadPlayerData(playerName);
+}
 
 async function loadPlayerData(playerName) {
   try {
