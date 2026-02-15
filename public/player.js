@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function loadPlayerData(playerName) {
   try {
+    const mojangResponse = await fetch(`https://api.mojang.com/users/profiles/minecraft/${playerName}`);
+    if (!mojangResponse.ok) {
+      console.error("Mojang fetch failed:", mojangResponse.status);
+      return;
+    }
+    const mojangData = await mojangResponse.json();
+    const playerUUID = mojangData.id; // UUID without dashes
+
     const response = await fetch(`/api/player/${playerName}`);
     if (!response.ok) {
       console.error("Fetch failed:", response.status);
@@ -29,7 +37,7 @@ async function loadPlayerData(playerName) {
     const pose = poses[randomIndex];
 
     const playerSkin = document.createElement("div");
-    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/${pose}/${playerName}/full" alt="${playerName}">`;
+    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/${pose}/${playerUUID}/full" alt="${playerName}">`;
     playerSkin.id = "skin-container";
     container.appendChild(playerSkin);
 
