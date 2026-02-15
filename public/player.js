@@ -2,16 +2,17 @@ const pathParts = window.location.pathname.split('/');
 const playerName = pathParts[2];
 const container = document.getElementById("player-info");
 
-if (!playerName) {
-  document.body.innerHTML = "<h1>No player specified</h1>";
-} else {
-  loadPlayerData(playerName);
-}
+document.addEventListener("DOMContentLoaded", function () {
+  if (!playerName) {
+    document.body.innerHTML = "<h1>No player specified</h1>";
+  } else {
+    loadPlayerData(playerName);
+  }
+});
 
 async function loadPlayerData(playerName) {
   try {
     const response = await fetch(`/api/player/${playerName}`);
-
     if (!response.ok) {
       console.error("Fetch failed:", response.status);
       return;
@@ -20,12 +21,21 @@ async function loadPlayerData(playerName) {
     const data = await response.json();
     console.log("Player data:", data);
 
-    // Player name header
+    container.innerHTML = ""; // clear previous
+
+    const playerSkin = document.createElement("div");
+    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/default/${playerName}/full" alt="${playerName}">`;
+    container.appendChild(playerSkin);
+
+    const playerInfo = document.createElement("section");
+    playerInfo.classList.add("player-info-stuff");
+
+    // Player header
     const nameHeader = document.createElement("h1");
     nameHeader.textContent = playerName;
-    container.appendChild(nameHeader);
+    playerInfo.appendChild(nameHeader);
 
-    // Events section
+    // Events
     const teamArticle = document.createElement("article");
     teamArticle.classList.add("events-played");
 
@@ -43,22 +53,21 @@ async function loadPlayerData(playerName) {
     `;
     teamArticle.appendChild(headerRow);
 
-    // Loop through returned events
     data.events.forEach(event => {
       const row = document.createElement("div");
       row.classList.add("row");
-
       row.innerHTML = `
         <div>${event.season_name}</div>
         <div>${event.team}</div>
         <div>${event.placement}</div>
         <div>${event.points}</div>
       `;
-
       teamArticle.appendChild(row);
     });
 
-    container.appendChild(teamArticle);
+    playerInfo.appendChild(teamArticle);
+
+    container.append(playerInfo);
 
   } catch (error) {
     console.error("Error loading player:", error);
