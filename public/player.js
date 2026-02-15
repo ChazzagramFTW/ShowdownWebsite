@@ -1,6 +1,7 @@
 const pathParts = window.location.pathname.split('/');
 const playerName = pathParts[2];
 const container = document.getElementById("player-info");
+const poses = ["default", "marching", "walking", "crouching", "ultimate", "pointing", "kicking", "lunging"];
 
 document.addEventListener("DOMContentLoaded", function () {
   if (!playerName) {
@@ -23,8 +24,13 @@ async function loadPlayerData(playerName) {
 
     container.innerHTML = ""; // clear previous
 
+    const randomIndex = Math.floor(Math.random() * poses.length);
+
+    const pose = poses[randomIndex];
+
     const playerSkin = document.createElement("div");
-    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/default/${playerName}/full" alt="${playerName}">`;
+    playerSkin.innerHTML = `<img src="https://starlightskins.lunareclipse.studio/render/${pose}/${playerName}/full" alt="${playerName}">`;
+    playerSkin.id = "skin-container";
     container.appendChild(playerSkin);
 
     const playerInfo = document.createElement("section");
@@ -53,6 +59,9 @@ async function loadPlayerData(playerName) {
     `;
     teamArticle.appendChild(headerRow);
 
+    const rowBox = document.createElement("div");
+    rowBox.classList.add("rows");
+
     data.events.forEach(event => {
       const row = document.createElement("div");
       row.classList.add("row");
@@ -62,8 +71,10 @@ async function loadPlayerData(playerName) {
         <div>${event.placement}</div>
         <div>${event.points}</div>
       `;
-      teamArticle.appendChild(row);
+      rowBox.appendChild(row);
     });
+
+    teamArticle.appendChild(rowBox);
 
     playerInfo.appendChild(teamArticle);
 

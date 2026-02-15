@@ -20,8 +20,9 @@
 
     <link rel="canonical" href="https://mcshowdown.org/player"> 
     <link rel="stylesheet" href="/style.css">
-    <link rel="icon" type="image/png" href="libs/logo.png" sizes="96x96">
-    <script src="/player.js" defer></script>
+    <script type="module" src="/player.js"></script>
+    <link rel="icon" type="image/png" href="/libs/logo.png" sizes="96x96">
+    <!-- <script src="/player.js" defer></script> -->
     <title>Showdown - Player Stats</title>
 </head>
 <body>
@@ -57,9 +58,8 @@
             </div>
         </nav>    
         <section id="event-stats">
-            <h1>Event Stats</h1>
+            <h1>Player Stats</h1>
             <hr>
-            <p>Choose an event:</p>
         </section>
         <section id="player-info"></section>
     </main>

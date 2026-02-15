@@ -837,6 +837,96 @@ figure img {
     /* points column */
 }
 
+
+#player-info {
+    color: white;
+    font-family: Magoat;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+}
+
+#skin-container {
+    width: 100%;
+    text-align: center;
+}
+
+#skin-container img {
+    width: 150px;
+}
+
+.player-info-stuff h1 {
+    width: min-content;
+    margin: 0 auto;
+    font-size: 1.2em;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 0.5em;
+    text-align: center;
+}
+
+.player-info-stuff h2 {
+    margin: 0 auto;
+    font-size: 1.2em;
+    padding: 0.3em;
+    text-align: center;
+}
+
+.events-played {
+    text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 1em auto;
+    padding: 1em;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2em;
+    backdrop-filter: saturate(500%);
+    box-shadow: inset 0 0 2em 0 white;
+    transform: scale(1.0);
+    transition: ease-in-out 0.2s;
+    font-family: Magoat;
+    text-align: left;
+    color: white;
+    font-size: 0.8em;
+}
+
+.player-info-stuff .row {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 50px 60px;
+    /* # | Name | Points */
+    padding: 1em;
+    font-size: 0.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 1em;
+    margin-top: 0.4em;
+    align-items: center;
+}
+
+.player-info-stuff .header div,
+.player-info-stuff .row div {
+    text-align: left;
+
+}
+
+.player-info-stuff .header {
+    text-align: left;
+    grid-template-columns: 1fr 1fr 50px 60px;
+    background-color: transparent;
+    /* # | Name | Points */
+}
+
+.player-info-stuff .header div:nth-child(3),
+.player-info-stuff .row div:nth-child(3),
+.player-info-stuff .header div:nth-child(4),
+.player-info-stuff .row div:nth-child(4) {
+    text-align: right;
+    /* points column */
+}
+
 @media screen and (min-width: 768px) {
 
     .mobile-nav {
@@ -1145,6 +1235,102 @@ figure img {
     #leaderboards .team-leaderboard .row div:nth-child(4) {
         text-align: right;
         /* points column */
+    }
+
+    #player-info {
+        margin: 1em auto;
+        padding: 1em;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2em;
+        backdrop-filter: saturate(500%);
+        box-shadow: inset 0 0 2em 0 white;
+        color: white;
+        font-family: Magoat;
+        max-width: 970px;
+        margin: 5em auto;
+        display: flex;
+        gap: 1.1em;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #skin-container {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        text-align: center;
+    }
+
+    #skin-container img {
+        width: 150px;
+    }
+
+    .player-info-stuff h1 {
+        width: min-content;
+        margin: 0;
+        font-size: 1.5em;
+        padding: 0.5em;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 0.5em;
+        text-align: center;
+    }
+
+    .player-info-stuff h2 {
+        margin: 0 auto;
+        font-size: 2em;
+        padding: 0.3em;
+        text-align: center;
+    }
+
+    .events-played {
+        text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 1em auto;
+        padding: 1em;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 2em;
+        backdrop-filter: saturate(500%);
+        box-shadow: inset 0 0 2em 0 white;
+        transform: scale(1.0);
+        transition: ease-in-out 0.2s;
+        font-family: Magoat;
+        text-align: left;
+        color: white;
+        font-size: 0.8em;
+    }
+
+    .player-info-stuff .rows {
+        max-height: 170px;
+        overflow-y: scroll;
+    }
+
+    .player-info-stuff .row {
+        text-align: left;
+        display: grid;
+        grid-template-columns: 1fr 1fr 115px 75px;
+        /* # | Name | Points */
+        padding: 1em;
+        gap: 10px;
+        font-size: 1.1em;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 1em;
+        margin-top: 0.4em;
+        align-items: center;
+    }
+
+    .player-info-stuff .header div,
+    .player-info-stuff .row div {
+        text-align: left;
+
+    }
+
+    .player-info-stuff .header {
+        text-align: left;
+        grid-template-columns: 1fr 1fr 115px 75px;
+        background-color: transparent;
+        /* # | Name | Points */
     }
 }
 
