@@ -73,6 +73,7 @@ async function startServer() {
 
     app.get("/api/player/:name", async (req, res) => {
       const playerName = req.params.name;
+      const playerNameNormalized = playerName.trim().toLowerCase();
 
       try {
         // Fetch all events from MongoDB
@@ -80,7 +81,7 @@ async function startServer() {
 
         const eventsPlayed = [];
 
-        const seasons = data.seasons;
+        const seasons = data[0].seasons;
 
         seasons.forEach(season => {
           if (Array.isArray(season.player_leaderboard)) {
@@ -91,7 +92,7 @@ async function startServer() {
             );
 
             if (index !== -1) {
-              const playerEntry = sortedPlayers[index];
+              const playerEntry = players[index];
 
               eventsPlayed.push({
                 season_name: season.season_name,
