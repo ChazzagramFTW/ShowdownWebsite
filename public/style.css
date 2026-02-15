@@ -840,6 +840,7 @@ figure img {
 #leaderboards .row img {
     transform: scale(1.0);
     cursor: default;
+    transition: ease-in-out;
 }
 
 #leaderboards .row img:hover {

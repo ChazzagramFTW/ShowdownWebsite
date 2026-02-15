@@ -3,7 +3,6 @@ const dropdown = document.querySelector('.event-dropdown');
 const selected = dropdown.querySelector('.selected');
 const optionsContainer = dropdown.querySelector('.options');
 const options = dropdown.querySelectorAll('.option');
-const playerTeamHeads = document.querySelectorAll('.row img');
 const container = document.getElementById("leaderboards");
 let defaultEvent = "Season One";
 
@@ -55,13 +54,12 @@ options.forEach(option => {
     });
 });
 
-playerTeamHeads.forEach(head => {
-  head.addEventListener('click', () => {
-    const name = head.alt; // get player name from alt
+document.addEventListener('click', function(e) {
+  if (e.target.matches('.row img')) {
+    const name = e.target.alt;
     if (!name) return;
-
     window.location.href = `/player/${name}`;
-  });
+  }
 });
 
 // Close dropdown if clicking outside
