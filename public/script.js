@@ -124,6 +124,9 @@ async function loadLeaderboards(event) {
           const btn = document.createElement("button");
           btn.textContent = game;
           btn.classList.add("game-button"); // for styling if needed
+          if(game == "Overall"){
+            btn.classList.add("active");
+          }
           btn.addEventListener("click", () => {
             document.querySelectorAll(".game-button").forEach(b => {
               b.classList.remove("active");
@@ -279,7 +282,7 @@ function updateLeaderboards(season, gameKey) {
   const sortedTeams = [...season.team_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
   sortedTeams.forEach((team, index) => {
     // Get team color if you have it
-    const teamInfo = season.team_leaderboard.find(t => t.team_name === team.team_name);
+    const teamInfo = team_info.find(t => t.team_name === team.team_name);
     const teamcolor = teamInfo ? teamInfo.team_color : "white";
 
     // Generate player images for this team
@@ -301,7 +304,7 @@ function updateLeaderboards(season, gameKey) {
   // Sort players by selected game points descending
   const sortedPlayers = [...season.player_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
   sortedPlayers.forEach((player, index) => {
-    const teamInfo = season.team_leaderboard.find(t => t.team_name === player.team);
+    const teamInfo = team_info.find(t => t.team_name === player.team);
     const teamcolor = teamInfo ? teamInfo.team_color : "white";
 
     const row = document.createElement("div");
