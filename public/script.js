@@ -123,7 +123,7 @@ async function loadLeaderboards(event) {
           btn.classList.add("game-button"); // for styling if needed
           btn.addEventListener("click", () => {
             const gameKey = button.textContent.trim();
-            updateLeaderboards(gameKey);
+            updateLeaderboards(season, gameKey);
           });
           gameButtons.appendChild(btn);
         });
@@ -260,7 +260,7 @@ document.addEventListener("click", e => {
 });
 }
 
-function updateLeaderboards(gameKey) {
+function updateLeaderboards(season, gameKey) {
   // Clear current rows except header
   const teamRows = teamLeaderboardContainer.querySelectorAll(".row:not(.header)");
   teamRows.forEach(row => row.remove());
