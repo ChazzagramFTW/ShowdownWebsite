@@ -1,7 +1,7 @@
 const pathParts = window.location.pathname.split('/');
 const playerName = pathParts[2];
 const container = document.getElementById("player-info");
-const poses = ["default", "marching", "walking", "crouching", "ultimate", "pointing", "kicking", "lunging"];
+const poses = ["default", "marching", "walking", "crouching", "ultimate", "pointing", "kicking", "lunging", "criss_cross", "cheering", "relaxing", "sleeping", "dead", "archer", "mojavatar", "reading"];
 const searchInput = document.getElementById("player-search");
 const suggestionsBox = document.getElementById("suggestions");
 
