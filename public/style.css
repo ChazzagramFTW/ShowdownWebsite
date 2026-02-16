@@ -902,6 +902,36 @@ figure img {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.game-buttons {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+
+.game-buttons button {
+    background-color: rgba(1, 1, 1, 0.7);
+    padding: 1em;
+    font-size: 0.8em;
+    text-decoration: none;
+    color: #F5F5F5;
+    font-family: Magoat;
+    border-radius: 1em;
+    transition: ease-in-out 0.2s;
+    transform: scale(1.0);
+}
+
+.game-buttons button.active {
+    background-color: rgba(1, 1, 1, 0.9);
+    color: rgb(255, 255, 109);
+}
+
+.game-buttons button:hover {
+    background-color: rgba(1, 1, 1, 0.8);
+    transform: scale(1.05);
+}
 
 #player-info {
     color: white;
@@ -1334,6 +1364,14 @@ figure img {
         /* points column */
     }
 
+    .game-buttons {
+        margin-bottom: 2em;
+    }
+
+    .game-buttons button {
+        font-size: 0.8em;
+    }
+
     #player-info {
         margin: 1em auto;
         padding: 1em;
@@ -1539,6 +1577,17 @@ figure img {
 
     #article-body {
         width: 1000px;
+    }
+
+    .game-buttons {
+        gap: 0.7em;
+        margin-bottom: 2em;
+    }
+
+    .game-buttons button {
+        background-color: rgba(1, 1, 1, 0.7);
+        padding: 1em;
+        font-size: 1.2em;
     }
 }
 
