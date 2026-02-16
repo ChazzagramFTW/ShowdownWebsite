@@ -71,40 +71,40 @@
           "points": 7095
         }
       ],
-        "player_leaderboard": [
-            { "player_name": "MxAero", "team": "Crystal Crashers", "points": 2716 },
-            { "player_name": "CxrtxR", "team": "Smithsonite Slayers", "points": 2708 },
-            { "player_name": "WeChokeOnMilk", "team": "Ruby Raiders", "points": 2587 },
-            { "player_name": "olivehoodies", "team": "Crystal Crashers", "points": 2430 },
-            { "player_name": "ImTwiggy", "team": "Amber Ambushers", "points": 2420 },
-            { "player_name": "ItzIgglesPiggles", "team": "Sapphire Soldiers", "points": 2371 },
-            { "player_name": "wheresmyyjules", "team": "Topaz Troopers", "points": 2128 },
-            { "player_name": "CreepyBrawler", "team": "Kyanite Killers", "points": 2122 },
-            { "player_name": "mightybrothers1", "team": "Ruby Raiders", "points": 2121 },
-            { "player_name": "Pineconen", "team": "Diamond Destroyers", "points": 2072 },
-            { "player_name": "MarcusDoesMC", "team": "Sapphire Soldiers", "points": 2037 },
-            { "player_name": "JackCas", "team": "Diamond Destroyers", "points": 2012 },
-            { "player_name": "WithMay", "team": "Smithsonite Slayers", "points": 1934 },
-            { "player_name": "StyStatic", "team": "Diamond Destroyers", "points": 1923 },
-            { "player_name": "WubDub_", "team": "Amber Ambushers", "points": 1897 },
-            { "player_name": "Sadaze", "team": "Kyanite Killers", "points": 1881 },
-            { "player_name": "oStrange", "team": "Ruby Raiders", "points": 1834 },
-            { "player_name": "CaptainAJX", "team": "Kyanite Killers", "points": 1826 },
-            { "player_name": "AvaJC", "team": "Topaz Troopers", "points": 1809 },
-            { "player_name": "HiImCC", "team": "Topaz Troopers", "points": 1801 },
-            { "player_name": "LynxyLiam", "team": "Topaz Troopers", "points": 1748 },
-            { "player_name": "ItsMeMarshy_", "team": "Smithsonite Slayers", "points": 1745 },
-            { "player_name": "oh_its_Harry", "team": "Sapphire Soldiers", "points": 1729 },
-            { "player_name": "onyxedd", "team": "Crystal Crashers", "points": 1702 },
-            { "player_name": "sardina_", "team": "Crystal Crashers", "points": 1655 },
-            { "player_name": "pinkfluffyseal", "team": "Amber Ambushers", "points": 1608 },
-            { "player_name": "JassiBug", "team": "Smithsonite Slayers", "points": 1572 },
-            { "player_name": "ThatDarkPhoenix", "team": "Amber Ambushers", "points": 1518 },
-            { "player_name": "Laaycie", "team": "Ruby Raiders", "points": 1400 },
-            { "player_name": "SilverGlimse", "team": "Sapphire Soldiers", "points": 1366 },
-            { "player_name": "Lumastar", "team": "Diamond Destroyers", "points": 1347 },
-            { "player_name": "LemonPhroggg", "team": "Kyanite Killers", "points": 1266 }
-        ]
+      "player_leaderboard": [
+          { "player_name": "MxAero", "team": "Crystal Crashers", "points": 2716 },
+          { "player_name": "CxrtxR", "team": "Smithsonite Slayers", "points": 2708 },
+          { "player_name": "WeChokeOnMilk", "team": "Ruby Raiders", "points": 2587 },
+          { "player_name": "olivehoodies", "team": "Crystal Crashers", "points": 2430 },
+          { "player_name": "ImTwiggy", "team": "Amber Ambushers", "points": 2420 },
+          { "player_name": "ItzIgglesPiggles", "team": "Sapphire Soldiers", "points": 2371 },
+          { "player_name": "wheresmyyjules", "team": "Topaz Troopers", "points": 2128 },
+          { "player_name": "CreepyBrawler", "team": "Kyanite Killers", "points": 2122 },
+          { "player_name": "mightybrothers1", "team": "Ruby Raiders", "points": 2121 },
+          { "player_name": "Pineconen", "team": "Diamond Destroyers", "points": 2072 },
+          { "player_name": "MarcusDoesMC", "team": "Sapphire Soldiers", "points": 2037 },
+          { "player_name": "JackCas", "team": "Diamond Destroyers", "points": 2012 },
+          { "player_name": "WithMay", "team": "Smithsonite Slayers", "points": 1934 },
+          { "player_name": "StyStatic", "team": "Diamond Destroyers", "points": 1923 },
+          { "player_name": "WubDub_", "team": "Amber Ambushers", "points": 1897 },
+          { "player_name": "Sadaze", "team": "Kyanite Killers", "points": 1881 },
+          { "player_name": "oStrange", "team": "Ruby Raiders", "points": 1834 },
+          { "player_name": "CaptainAJX", "team": "Kyanite Killers", "points": 1826 },
+          { "player_name": "AvaJC", "team": "Topaz Troopers", "points": 1809 },
+          { "player_name": "HiImCC", "team": "Topaz Troopers", "points": 1801 },
+          { "player_name": "LynxyLiam", "team": "Topaz Troopers", "points": 1748 },
+          { "player_name": "ItsMeMarshy_", "team": "Smithsonite Slayers", "points": 1745 },
+          { "player_name": "oh_its_Harry", "team": "Sapphire Soldiers", "points": 1729 },
+          { "player_name": "onyxedd", "team": "Crystal Crashers", "points": 1702 },
+          { "player_name": "sardina_", "team": "Crystal Crashers", "points": 1655 },
+          { "player_name": "pinkfluffyseal", "team": "Amber Ambushers", "points": 1608 },
+          { "player_name": "JassiBug", "team": "Smithsonite Slayers", "points": 1572 },
+          { "player_name": "ThatDarkPhoenix", "team": "Amber Ambushers", "points": 1518 },
+          { "player_name": "Laaycie", "team": "Ruby Raiders", "points": 1400 },
+          { "player_name": "SilverGlimse", "team": "Sapphire Soldiers", "points": 1366 },
+          { "player_name": "Lumastar", "team": "Diamond Destroyers", "points": 1347 },
+          { "player_name": "LemonPhroggg", "team": "Kyanite Killers", "points": 1266 }
+      ]
     },
     {
       "season_name": "Afterparty",
@@ -322,72 +322,55 @@
     {
       "season_name": "Showdown X Lads",
       "team_leaderboard": [
-        {
-          "team_name": "Smithsonite Slayers",
-          "points": 14375
-        },
-        {
-          "team_name": "Kyanite Killers",
-          "points": 13885
-        },
-        {
-          "team_name": "Sapphire Soldiers",
-          "points": 13641
-        },
-        {
-          "team_name": "Ruby Raiders",
-          "points": 13549
-        },
-        {
-          "team_name": "Topaz Troopers",
-          "points": 13267
-        },
-        {
-          "team_name": "Amber Ambushers",
-          "points": 12984
-        },
-        {
-          "team_name": "Diamond Destroyers",
-          "points": 11716
-        },
-        {
-          "team_name": "Crystal Crashers",
-          "points": 11456
-        }
+        { "team_name": "Ruby Raiders", "Overall": 14375, "Craftalot": 1680, "Colour Dash": 1909, "Survival Games": 522, "Slime Golf": 2292, "Zoomo Go": 1254, "Gub Game": 3438, "Bridge Builders": 2454 },
+        { "team_name": "Amber Ambushers", "Overall": 13885, "Craftalot": 1620, "Colour Dash": 1781, "Survival Games": 558, "Slime Golf": 2334, "Zoomo Go": 1408, "Gub Game": 3904, "Bridge Builders": 2236 },
+        { "team_name": "Topaz Troopers", "Overall": 13641, "Craftalot": 1710, "Colour Dash": 1759, "Survival Games": 365, "Slime Golf": 2376, "Zoomo Go": 1476, "Gub Game": 3744, "Bridge Builders": 2118 },
+        { "team_name": "Kyanite Killers", "Overall": 13549, "Craftalot": 1530, "Colour Dash": 1572, "Survival Games": 541, "Slime Golf": 2418, "Zoomo Go": 1488, "Gub Game": 3196, "Bridge Builders": 1950 },
+        { "team_name": "Diamond Destroyers", "Overall": 13267, "Craftalot": 1620, "Colour Dash": 1767, "Survival Games": 483, "Slime Golf": 2460, "Zoomo Go": 1482, "Gub Game": 3354, "Bridge Builders": 1782 },
+        { "team_name": "Sapphire Soldiers", "Overall": 12948, "Craftalot": 1770, "Colour Dash": 1900, "Survival Games": 901, "Slime Golf": 2244, "Zoomo Go": 1638, "Gub Game": 3502, "Bridge Builders": 1988 },
+        { "team_name": "Smithsonite Slayers", "Overall": 11716, "Craftalot": 1680, "Colour Dash": 1859, "Survival Games": 967, "Slime Golf": 2028, "Zoomo Go": 1490, "Gub Game": 3534, "Bridge Builders": 2044 },
+        { "team_name": "Crystal Crashers", "Overall": 11456, "Craftalot": 1650, "Colour Dash": 1834, "Survival Games": 1064, "Slime Golf": 1812, "Zoomo Go": 1342, "Gub Game": 3868, "Bridge Builders": 2200 }
       ],
       "player_leaderboard": [
-        { "player_name": "CxrtxR", "team": "Topaz Troopers", "points": 4416 },
-        { "player_name": "Moisteh", "team": "Diamond Destroyers", "points": 4145 },
-        { "player_name": "mightybrothers1", "team": "Kyanite Killers", "points": 3989 },
-        { "player_name": "RiceInRealTime", "team": "Smithsonite Slayers", "points": 3937 },
-        { "player_name": "KatsExistance", "team": "Smithsonite Slayers", "points": 3870 },
-        { "player_name": "MxAero", "team": "Sapphire Soldiers", "points": 3705 },
-        { "player_name": "FireBreathMan", "team": "Ruby Raiders", "points": 3701 },
-        { "player_name": "Tupajus", "team": "Smithsonite Slayers", "points": 3618 },
-        { "player_name": "ItzIgglesPiggles", "team": "Ruby Raiders", "points": 3610 },
-        { "player_name": "JackCas", "team": "Kyanite Killers", "points": 3537 },
-        { "player_name": "TayLmao", "team": "Sapphire Soldiers", "points": 3474 },
-        { "player_name": "snakevnm", "team": "Kyanite Killers", "points": 3468 },
-        { "player_name": "Kirkonrctta", "team": "Amber Ambushers", "points": 3421 },
-        { "player_name": "oGarfield", "team": "Amber Ambushers", "points": 3408 },
-        { "player_name": "SMK64", "team": "Amber Ambushers", "points": 3362 },
-        { "player_name": "Beauloon", "team": "Sapphire Soldiers", "points": 3260 },
-        { "player_name": "ScottoAC", "team": "Diamond Destroyers", "points": 3234 },
-        { "player_name": "Malkshake", "team": "Crystal Crashers", "points": 3165 },
-        { "player_name": "Pineconen", "team": "Sapphire Soldiers", "points": 3152 },
-        { "player_name": "Chazzagram", "team": "Ruby Raiders", "points": 3129 },
-        { "player_name": "MasterGarf", "team": "Ruby Raiders", "points": 3109 },
-        { "player_name": "Dynamitedoughnut", "team": "Topaz Troopers", "points": 3067 },
-        { "player_name": "Pers0nified", "team": "Crystal Crashers", "points": 3057 },
-        { "player_name": "MCBIGMACPLAYZ", "team": "Topaz Troopers", "points": 2925 },
-        { "player_name": "oh_its_Harry", "team": "Kyanite Killers", "points": 2891 },
-        { "player_name": "rheneye", "team": "Topaz Troopers", "points": 2859 },
-        { "player_name": "CelestialThumper", "team": "Crystal Crashers", "points": 2758 },
-        { "player_name": "ShadowDragoMC", "team": "Amber Ambushers", "points": 2757 },
-        { "player_name": "WithMay", "team": "Smithsonite Slayers", "points": 2620 },
-        { "player_name": "JohnFromDownPub", "team": "Crystal Crashers", "points": 2226 },
-        { "player_name": "Pixelcraftian", "team": "Diamond Destroyers", "points": 2189 },
-        { "player_name": "ricekristys", "team": "Diamond Destroyers", "points": 2028 }
+        { "player_name": "Chazzagram", "team": "Ruby Raiders", "Overall": 3129, "Craftalot": 420, "Colour Dash": 472, "Survival Games": 2, "Slime Golf": 573, "Zoomo Go": 352, "Gub Game": 684, "Bridge Builders": 626 },
+        { "player_name": "FireBreathMan", "team": "Ruby Raiders", "Overall": 3701, "Craftalot": 420, "Colour Dash": 529, "Survival Games": 377, "Slime Golf": 573, "Zoomo Go": 280, "Gub Game": 946, "Bridge Builders": 576 },
+        { "player_name": "ItzIgglesPiggles", "team": "Ruby Raiders", "Overall": 3610, "Craftalot": 510, "Colour Dash": 579, "Survival Games": 62, "Slime Golf": 573, "Zoomo Go": 308, "Gub Game": 952, "Bridge Builders": 626 },
+        { "player_name": "MasterGarf", "team": "Ruby Raiders", "Overall": 3109, "Craftalot": 330, "Colour Dash": 329, "Survival Games": 81, "Slime Golf": 573, "Zoomo Go": 314, "Gub Game": 856, "Bridge Builders": 626 },
+
+        { "player_name": "Kirkonrctta", "team": "Amber Ambushers", "Overall": 3421, "Craftalot": 360, "Colour Dash": 344, "Survival Games": 38, "Slime Golf": 615, "Zoomo Go": 506, "Gub Game": 1150, "Bridge Builders": 408 },
+        { "player_name": "oGarfield", "team": "Amber Ambushers", "Overall": 3408, "Craftalot": 510, "Colour Dash": 507, "Survival Games": 184, "Slime Golf": 615, "Zoomo Go": 348, "Gub Game": 786, "Bridge Builders": 458 },
+        { "player_name": "ShadowDragoMC", "team": "Amber Ambushers", "Overall": 2757, "Craftalot": 330, "Colour Dash": 392, "Survival Games": 238, "Slime Golf": 615, "Zoomo Go": 320, "Gub Game": 404, "Bridge Builders": 458 },
+        { "player_name": "SMK64", "team": "Amber Ambushers", "Overall": 3362, "Craftalot": 420, "Colour Dash": 524, "Survival Games": 23, "Slime Golf": 615, "Zoomo Go": 308, "Gub Game": 1014, "Bridge Builders": 458 },
+
+        { "player_name": "CxrtxR", "team": "Topaz Troopers", "Overall": 4416, "Craftalot": 510, "Colour Dash": 477, "Survival Games": 456, "Slime Golf": 399, "Zoomo Go": 662, "Gub Game": 1298, "Bridge Builders": 614 },
+        { "player_name": "Dynamitedoughnut", "team": "Topaz Troopers", "Overall": 3067, "Craftalot": 420, "Colour Dash": 466, "Survival Games": 250, "Slime Golf": 399, "Zoomo Go": 200, "Gub Game": 818, "Bridge Builders": 514 },
+        { "player_name": "MCBIGMACPLAYZ", "team": "Topaz Troopers", "Overall": 2925, "Craftalot": 300, "Colour Dash": 367, "Survival Games": 335, "Slime Golf": 399, "Zoomo Go": 172, "Gub Game": 738, "Bridge Builders": 614 },
+        { "player_name": "rheneye", "team": "Topaz Troopers", "Overall": 2859, "Craftalot": 390, "Colour Dash": 489, "Survival Games": 105, "Slime Golf": 399, "Zoomo Go": 400, "Gub Game": 462, "Bridge Builders": 614 },
+
+        { "player_name": "JackCas", "team": "Kyanite Killers", "Overall": 3537, "Craftalot": 450, "Colour Dash": 550, "Survival Games": 457, "Slime Golf": 438, "Zoomo Go": 320, "Gub Game": 778, "Bridge Builders": 544 },
+        { "player_name": "mightybrothers1", "team": "Kyanite Killers", "Overall": 3989, "Craftalot": 510, "Colour Dash": 483, "Survival Games": 616, "Slime Golf": 438, "Zoomo Go": 402, "Gub Game": 946, "Bridge Builders": 594 },
+        { "player_name": "oh_its_Harry", "team": "Kyanite Killers", "Overall": 2891, "Craftalot": 330, "Colour Dash": 276, "Survival Games": 183, "Slime Golf": 438, "Zoomo Go": 400, "Gub Game": 770, "Bridge Builders": 494 },
+        { "player_name": "snakevnm", "team": "Kyanite Killers", "Overall": 3468, "Craftalot": 420, "Colour Dash": 505, "Survival Games": 389, "Slime Golf": 438, "Zoomo Go": 436, "Gub Game": 686, "Bridge Builders": 594 },
+
+        { "player_name": "Moisteh", "team": "Diamond Destroyers", "Overall": 4145, "Craftalot": 360, "Colour Dash": 416, "Survival Games": 217, "Slime Golf": 552, "Zoomo Go": 924, "Gub Game": 1088, "Bridge Builders": 588 },
+        { "player_name": "Pixelcraftian", "team": "Diamond Destroyers", "Overall": 2189, "Craftalot": 240, "Colour Dash": 346, "Survival Games": 45, "Slime Golf": 552, "Zoomo Go": 368, "Gub Game": 250, "Bridge Builders": 388 },
+        { "player_name": "ricekristys", "team": "Diamond Destroyers", "Overall": 2028, "Craftalot": 270, "Colour Dash": 320, "Survival Games": 120, "Slime Golf": 552, "Zoomo Go": 54, "Gub Game": 324, "Bridge Builders": 388 },
+        { "player_name": "ScottoAC", "team": "Diamond Destroyers", "Overall": 3234, "Craftalot": 450, "Colour Dash": 368, "Survival Games": 94, "Slime Golf": 552, "Zoomo Go": 292, "Gub Game": 890, "Bridge Builders": 588 },
+
+        { "player_name": "Beauloon", "team": "Sapphire Soldiers", "Overall": 3260, "Craftalot": 480, "Colour Dash": 334, "Survival Games": 393, "Slime Golf": 489, "Zoomo Go": 204, "Gub Game": 770, "Bridge Builders": 590 },
+        { "player_name": "MxAero", "team": "Sapphire Soldiers", "Overall": 3705, "Craftalot": 510, "Colour Dash": 443, "Survival Games": 325, "Slime Golf": 489, "Zoomo Go": 628, "Gub Game": 720, "Bridge Builders": 590 },
+        { "player_name": "Pineconen", "team": "Sapphire Soldiers", "Overall": 3152, "Craftalot": 480, "Colour Dash": 368, "Survival Games": 361, "Slime Golf": 489, "Zoomo Go": 280, "Gub Game": 584, "Bridge Builders": 590 },
+        { "player_name": "TayLmao", "team": "Sapphire Soldiers", "Overall": 3474, "Craftalot": 480, "Colour Dash": 441, "Survival Games": 370, "Slime Golf": 489, "Zoomo Go": 576, "Gub Game": 628, "Bridge Builders": 490 },
+
+        { "player_name": "KatsExistance", "team": "Smithsonite Slayers", "Overall": 3870, "Craftalot": 480, "Colour Dash": 566, "Survival Games": 210, "Slime Golf": 474, "Zoomo Go": 392, "Gub Game": 1104, "Bridge Builders": 644 },
+        { "player_name": "RiceInRealTime", "team": "Smithsonite Slayers", "Overall": 3937, "Craftalot": 450, "Colour Dash": 388, "Survival Games": 263, "Slime Golf": 474, "Zoomo Go": 648, "Gub Game": 1070, "Bridge Builders": 644 },
+        { "player_name": "Tupajus", "team": "Smithsonite Slayers", "Overall": 3618, "Craftalot": 510, "Colour Dash": 530, "Survival Games": 242, "Slime Golf": 474, "Zoomo Go": 188, "Gub Game": 1080, "Bridge Builders": 594 },
+        { "player_name": "WithMay", "team": "Smithsonite Slayers", "Overall": 2620, "Craftalot": 300, "Colour Dash": 288, "Survival Games": 196, "Slime Golf": 474, "Zoomo Go": 212, "Gub Game": 556, "Bridge Builders": 594 },
+
+        { "player_name": "CelestialThumper", "team": "Crystal Crashers", "Overall": 2758, "Craftalot": 300, "Colour Dash": 388, "Survival Games": 294, "Slime Golf": 372, "Zoomo Go": 498, "Gub Game": 470, "Bridge Builders": 436 },
+        { "player_name": "JohnFromDownPub", "team": "Crystal Crashers", "Overall": 2226, "Craftalot": 240, "Colour Dash": 423, "Survival Games": 491, "Slime Golf": 372, "Zoomo Go": 114, "Gub Game": 300, "Bridge Builders": 286 },
+        { "player_name": "Malkshake", "team": "Crystal Crashers", "Overall": 3165, "Craftalot": 390, "Colour Dash": 374, "Survival Games": 233, "Slime Golf": 372, "Zoomo Go": 472, "Gub Game": 938, "Bridge Builders": 386 },
+        { "player_name": "Pers0nified", "team": "Crystal Crashers", "Overall": 3057, "Craftalot": 330, "Colour Dash": 427, "Survival Games": 270, "Slime Golf": 372, "Zoomo Go": 326, "Gub Game": 896, "Bridge Builders": 436 }
       ]
     }
   ]

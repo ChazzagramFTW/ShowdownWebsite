@@ -111,6 +111,25 @@ async function loadLeaderboards(event) {
         seasonTitle.textContent = season.season_name;
         seasonSection.appendChild(seasonTitle);
 
+        const gameButtons = document.createElement("div");
+
+        const firstTeam = season.team_leaderboard[0];
+
+        const games = Object.keys(firstTeam).filter(key => key !== 'team_name');
+
+        games.forEach(game => {
+          const btn = document.createElement("button");
+          btn.textContent = game;
+          btn.classList.add("game-button"); // for styling if needed
+          btn.addEventListener("click", () => {
+            const gameKey = button.textContent.trim();
+            updateLeaderboards(gameKey);
+          });
+          gameButtons.appendChild(btn);
+        });
+
+        seasonSection.appendChild(gameButtons);
+
         // Container for leaderboards
         const tablesContainer = document.createElement("div");
         tablesContainer.classList.add("tables");
@@ -131,7 +150,8 @@ async function loadLeaderboards(event) {
         let teamcolor = "white";
 
         if (Array.isArray(season.team_leaderboard)) {
-          season.team_leaderboard.forEach((team, index) => {
+          const sortedTeams = [...season.team_leaderboard].sort((a, b) => b.Overall - a.Overall);
+          sortedTeams.forEach((team, index) => {
             teams.forEach(teaminfo => {
               if(teaminfo.team_name == team.team_name){
                 teamcolor = teaminfo.team_color;
@@ -175,7 +195,8 @@ async function loadLeaderboards(event) {
         playerArticle.appendChild(scoresList);
 
         if (Array.isArray(season.player_leaderboard)) {
-          season.player_leaderboard.forEach((player, index) => {
+          const sortedPlayers = [...season.player_leaderboard].sort((a, b) => b.Overall - a.Overall);
+          sortedPlayers.forEach((player, index) => {
             teams.forEach(teaminfo => {
               if(teaminfo.team_name == player.team){
                 teamcolor = teaminfo.team_color;
@@ -237,4 +258,53 @@ document.addEventListener("click", e => {
         suggestionsBox.style.display = "none";
     }
 });
+}
+
+function updateLeaderboards(gameKey) {
+  // Clear current rows except header
+  const teamRows = teamLeaderboardContainer.querySelectorAll(".row:not(.header)");
+  teamRows.forEach(row => row.remove());
+
+  const playerRows = playerLeaderboardContainer.querySelectorAll(".row:not(.header)");
+  playerRows.forEach(row => row.remove());
+
+  // Sort teams by the selected game points descending
+  const sortedTeams = [...season.team_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
+  sortedTeams.forEach((team, index) => {
+    // Get team color if you have it
+    const teamInfo = teams.find(t => t.team_name === team.team_name);
+    const teamcolor = teamInfo ? teamInfo.team_color : "white";
+
+    // Generate player images for this team
+    const teamPlayers = season.player_leaderboard.filter(p => p.team === team.team_name);
+    const imagesHTML = teamPlayers.map(player => `<img src="https://minotar.net/helm/${player.player_name}/24.png" alt="${player.player_name}" class="team-player-img">`).join("");
+
+    // Create a new row for team
+    const row = document.createElement("div");
+    row.classList.add("row");
+    row.innerHTML = `
+      <div>${index + 1}.</div>
+      <div style="color: ${teamcolor};">${team.team_name}</div>
+      <div class="team-images">${imagesHTML}</div>
+      <div>${team[gameKey] || 0}</div>
+    `;
+    teamLeaderboardContainer.appendChild(row);
+  });
+
+  // Sort players by selected game points descending
+  const sortedPlayers = [...season.player_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
+  sortedPlayers.forEach((player, index) => {
+    const teamInfo = teams.find(t => t.team_name === player.team);
+    const teamcolor = teamInfo ? teamInfo.team_color : "white";
+
+    const row = document.createElement("div");
+    row.classList.add("row");
+    row.innerHTML = `
+      <div>${index + 1}.</div>
+      <img src="https://minotar.net/helm/${player.player_name}/24.png" alt="${player.player_name}">
+      <div style="color: ${teamcolor};">${player.player_name}</div>
+      <div>${player[gameKey] || 0}</div>
+    `;
+    playerLeaderboardContainer.appendChild(row);
+  });
 }
