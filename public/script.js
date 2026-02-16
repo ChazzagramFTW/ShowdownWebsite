@@ -296,7 +296,7 @@ function updateLeaderboards(season, gameKey) {
   // Sort players by selected game points descending
   const sortedPlayers = [...season.player_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
   sortedPlayers.forEach((player, index) => {
-    const teamInfo = teams.find(t => t.team_name === player.team);
+    const teamInfo = sortedTeams.find(t => t.team_name === player.team);
     const teamcolor = teamInfo ? teamInfo.team_color : "white";
 
     const row = document.createElement("div");
