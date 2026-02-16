@@ -7,7 +7,7 @@ const container = document.getElementById("leaderboards");
 const searchInput = document.getElementById("player-search");
 const suggestionsBox = document.getElementById("suggestions");
 let defaultEvent = "Season One";
-let playerArticle;
+let scoresList;
 let teamArticle;
 
 const menuBtn = document.getElementById('mobile-menu-btn');
@@ -187,7 +187,7 @@ async function loadLeaderboards(event) {
         tablesContainer.appendChild(teamArticle);
 
         // Player Leaderboard
-        playerArticle = document.createElement("article");
+        const playerArticle = document.createElement("article");
         playerArticle.classList.add("player-leaderboard");
 
         const playerTitle = document.createElement("h3");
@@ -200,7 +200,7 @@ async function loadLeaderboards(event) {
         playerHeader.innerHTML = `<div>#</div><div>Player</div><div>Points</div>`;
         playerArticle.appendChild(playerHeader);
 
-        const scoresList = document.createElement("section");
+        scoresList = document.createElement("section");
         scoresList.classList.add("scores-list");
         playerArticle.appendChild(scoresList);
 
@@ -275,7 +275,7 @@ function updateLeaderboards(season, gameKey) {
   const teamRows = teamArticle.querySelectorAll(".row:not(.header)");
   teamRows.forEach(row => row.remove());
 
-  const playerRows = playerArticle.querySelectorAll(".row:not(.header)");
+  const playerRows = scoresList.querySelectorAll(".row:not(.header)");
   playerRows.forEach(row => row.remove());
 
   // Sort teams by the selected game points descending
@@ -315,6 +315,6 @@ function updateLeaderboards(season, gameKey) {
       <div style="color: ${teamcolor};">${player.player_name}</div>
       <div>${player[gameKey] || 0}</div>
     `;
-    playerArticle.appendChild(row);
+    scoresList.appendChild(row);
   });
 }
