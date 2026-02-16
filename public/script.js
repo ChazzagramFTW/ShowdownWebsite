@@ -274,7 +274,7 @@ function updateLeaderboards(season, gameKey) {
   const sortedTeams = [...season.team_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
   sortedTeams.forEach((team, index) => {
     // Get team color if you have it
-    const teamInfo = teams.find(t => t.team_name === team.team_name);
+    const teamInfo = sortedTeams.find(t => t.team_name === team.team_name);
     const teamcolor = teamInfo ? teamInfo.team_color : "white";
 
     // Generate player images for this team
