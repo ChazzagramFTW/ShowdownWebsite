@@ -133,7 +133,7 @@ async function loadLeaderboards(event) {
             });
             btn.classList.add("active");
             const gameKey = btn.textContent.trim();
-            updateLeaderboards(season, gameKey);
+            updateLeaderboards(teams, season, gameKey);
           });
           gameButtons.appendChild(btn);
         });
@@ -270,7 +270,7 @@ document.addEventListener("click", e => {
 });
 }
 
-function updateLeaderboards(season, gameKey) {
+function updateLeaderboards(teams, season, gameKey) {
   // Clear current rows except header
   const teamRows = teamArticle.querySelectorAll(".row:not(.header)");
   teamRows.forEach(row => row.remove());
@@ -282,7 +282,7 @@ function updateLeaderboards(season, gameKey) {
   const sortedTeams = [...season.team_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
   sortedTeams.forEach((team, index) => {
     // Get team color if you have it
-    const teamInfo = data[0].team_info.find(t => t.team_name === team.team_name);
+    const teamInfo = teams.find(t => t.team_name === team.team_name);
     const teamcolor = teamInfo ? teamInfo.team_color : "white";
 
     // Generate player images for this team
@@ -304,7 +304,7 @@ function updateLeaderboards(season, gameKey) {
   // Sort players by selected game points descending
   const sortedPlayers = [...season.player_leaderboard].sort((a, b) => (b[gameKey] || 0) - (a[gameKey] || 0));
   sortedPlayers.forEach((player, index) => {
-    const teamInfo = data[0].team_info.find(t => t.team_name === player.team);
+    const teamInfo = teams.find(t => t.team_name === player.team);
     const teamcolor = teamInfo ? teamInfo.team_color : "white";
 
     const row = document.createElement("div");
