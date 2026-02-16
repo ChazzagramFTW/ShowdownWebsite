@@ -163,7 +163,7 @@ async function startServer() {
                 team: playerEntry.team,
                 team_color: teamColor,
                 placement: index + 1,
-                points: playerEntry.points
+                points: playerEntry.Overall
               });
             }
           }
