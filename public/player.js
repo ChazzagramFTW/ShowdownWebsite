@@ -5,6 +5,13 @@ const poses = ["default", "marching", "walking", "crouching", "ultimate", "point
 const searchInput = document.getElementById("player-search");
 const suggestionsBox = document.getElementById("suggestions");
 
+const menuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   if (!playerName) {
     document.body.innerHTML = "<h1>No player specified</h1>";

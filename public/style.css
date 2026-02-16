@@ -127,7 +127,9 @@ nav input {
 .mobile-nav {
     width: min-content;
     height: 100%;
-    position: relative;
+    position: sticky;
+    top: 80px;
+    z-index: 99;
 }
 
 
@@ -281,7 +283,7 @@ p {
 
 
 #feature img {
-    width: 370px;
+    width: 340px;
     transform: scale(1);
     transition: 0.2s ease-in-out;
 }
