@@ -283,7 +283,7 @@ p {
 
 
 #feature img {
-    width: 370px;
+    width: 340px;
     transform: scale(1);
     transition: 0.2s ease-in-out;
 }
