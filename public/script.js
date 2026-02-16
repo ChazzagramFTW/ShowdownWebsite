@@ -122,7 +122,7 @@ async function loadLeaderboards(event) {
           btn.textContent = game;
           btn.classList.add("game-button"); // for styling if needed
           btn.addEventListener("click", () => {
-            const gameKey = button.textContent.trim();
+            const gameKey = btn.textContent.trim();
             updateLeaderboards(season, gameKey);
           });
           gameButtons.appendChild(btn);
@@ -168,7 +168,7 @@ async function loadLeaderboards(event) {
 
             const row = document.createElement("div");
             row.classList.add("row");
-            row.innerHTML = `<div>${index + 1}.</div><div style="color: ${teamcolor};">${team.team_name}</div><div class="team-images">${imagesHTML}</div><div>${team.points}</div>`;
+            row.innerHTML = `<div>${index + 1}.</div><div style="color: ${teamcolor};">${team.team_name}</div><div class="team-images">${imagesHTML}</div><div>${team.Overall}</div>`;
             teamArticle.appendChild(row);
             teamcolor = "white";
           });
@@ -204,7 +204,7 @@ async function loadLeaderboards(event) {
             });
             const row = document.createElement("div");
             row.classList.add("row");
-            row.innerHTML = `<div>${index + 1}.</div><img src="https://minotar.net/helm/${player.player_name}/24.png" alt="${player.player_name}"><div style="color: ${teamcolor};">${player.player_name}</div><div>${player.points}</div>`;
+            row.innerHTML = `<div>${index + 1}.</div><img src="https://minotar.net/helm/${player.player_name}/24.png" alt="${player.player_name}"><div style="color: ${teamcolor};">${player.player_name}</div><div>${player.Overall}</div>`;
             scoresList.appendChild(row);
           });
         }
