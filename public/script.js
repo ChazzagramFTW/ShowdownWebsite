@@ -25,6 +25,10 @@ if (window.location.pathname === "/lads") {
     defaultEvent = "Showdown X Lads";
 }
 
+if (window.location.pathname === "/testevent") {
+    defaultEvent = "Test";
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const selectedPanel = document.querySelector(".selected img");
@@ -32,6 +36,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (defaultEvent === "Showdown X Lads") {
         selectedPanel.src = "libs/showdownlads.png";
         selectedPanel.alt = "Showdown X Lads";
+        loadLeaderboards(defaultEvent);
+        return;
+    }
+    if (defaultEvent === "Test") {
+        selectedPanel.src = "libs/2026backdrop.png";
+        selectedPanel.alt = "Test";
         loadLeaderboards(defaultEvent);
         return;
     }

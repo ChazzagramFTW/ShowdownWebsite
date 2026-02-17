@@ -30,6 +30,10 @@ app.get('/lads', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'eventstats.html'));
 });
 
+app.get('/testevent', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'eventstats.html'));
+});
+
 app.get('/player/:name', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'player.html'));
 });
