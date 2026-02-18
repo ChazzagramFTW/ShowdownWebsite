@@ -625,6 +625,12 @@ p {
     background-position-x: -15em;
 }
 
+#mystery-game {
+    background-image: url("libs/mysterybg.png");
+    background-size: cover;
+    background-position-x: -15em;
+}
+
 #crumble-clash {
     background-image: url("libs/crumblebg.png");
     background-size: cover;
@@ -1193,6 +1199,10 @@ figure img {
         background-position-x: 0em;
     }
 
+    #mystery-game {
+        background-position-x: -10em;
+    }
+
     #crumble-clash {
         background-position-x: 0em;
     }
@@ -1567,6 +1577,10 @@ figure img {
 
     #zoomo-go {
         background-position-y: -5em;
+    }
+
+    #mystery-game {
+        background-position-x: -15em;
     }
 
     #crumble-clash {
