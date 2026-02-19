@@ -149,7 +149,10 @@ async function startServer() {
 
         seasons.forEach(season => {
           if (Array.isArray(season.player_leaderboard)) {
-            const players = season.player_leaderboard;
+            const players = [...season.player_leaderboard].sort((a, b) => {
+              return Number(b.Overall) - Number(a.Overall);
+            });
+
             const index = players.findIndex(
               player => player.player_name.trim().toLowerCase() === playerNameNormalized
             );
