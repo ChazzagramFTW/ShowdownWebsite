@@ -423,7 +423,9 @@ p {
 .panel h1,
 #the-games h1,
 #staff-team h1,
-#event-stats h1 {
+#event-stats h1,
+#the-roster h1,
+#event-date h1 {
     text-align: center;
     letter-spacing: 0.5em;
     text-shadow: rgba(0, 0, 0, 0.7) 0em 0em 0.5em;
@@ -480,7 +482,9 @@ p {
 
 #the-games,
 #staff-team,
-#event-stats {
+#event-stats,
+#the-roster,
+#event-date {
     width: 350px;
     margin: 5em auto;
 }
@@ -507,6 +511,19 @@ p {
     gap: 0.4em;
     justify-content: center;
     align-items: center;
+}
+
+.game-panel-info .game-panel-desc {
+    font-size: 0.9em;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 95%;
+    margin-bottom: 1em;
+    padding: 1em;
+    border-radius: 2em;
+    backdrop-filter: saturate(500%) blur(0.5em) brightness(0.5);
+    box-shadow: inset 0 0 2em 0 white;
+    transform: scale(1.0);
+    transition: ease-in-out 0.2s;
 }
 
 .game-panel-info .game-tags p {
@@ -1030,6 +1047,131 @@ figure img {
     /* points column */
 }
 
+#roster-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin: 1em 0;
+    gap: 1em;
+}
+
+.team-panel {
+    text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    margin: 0 auto;
+    padding: 1em;
+    border-radius: 2em;
+    box-shadow: inset 0 0 2em 0 white;
+    transform: scale(1.0);
+    transition: ease-in-out 0.2s;
+    font-family: Magoat;
+    text-align: left;
+    color: white;
+    font-size: 0.8em;
+}
+
+.team-panel h2 {
+    padding: 0.5em;
+    font-weight: 100;
+}
+
+.team-panel .player-list {
+    padding: 0.5em;
+}
+
+.team-panel .player-list div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.team-panel .player-list div img {
+    width: 24px;
+    height: 24px;
+}
+
+.team-panel .player-list div p {
+    font-family: Magoat;
+    font-weight: 100;
+    margin: 0;
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+#ruby {
+    background-color: rgb(238, 86, 86);
+}
+
+#amber {
+    background-color: rgb(243, 170, 86);
+}
+
+#topaz {
+    background-color: rgb(255, 208, 55);
+}
+
+#kyanite {
+    background-color: rgb(108, 235, 76);
+}
+
+#diamond {
+    background-color: rgb(82, 220, 224);
+}
+
+#sapphire {
+    background-color: rgba(100, 128, 255);
+}
+
+#smithsonite {
+    background-color: rgb(201, 87, 230);
+}
+
+#crystal {
+    background-color: rgba(230, 230, 230, 0.753);
+}
+
+#event-date {
+    text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 5em auto;
+    padding: 3em;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2em;
+    backdrop-filter: saturate(500%);
+    box-shadow: inset 0 0 2em 0 white;
+    transform: scale(1.0);
+    transition: ease-in-out 0.2s;
+    font-family: Magoat;
+    text-align: left;
+    color: white;
+    font-size: 0.8em;
+}
+
+#event-date p {
+    text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
+    padding: 0.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 2em;
+    backdrop-filter: saturate(500%);
+    box-shadow: inset 0 0 2em 0 white;
+    transform: scale(1.0);
+    transition: ease-in-out 0.2s;
+    font-family: Magoat;
+    font-weight: 100;
+    text-align: center;
+    color: white;
+    font-size: 3em;
+}
+
 @media screen and (min-width: 768px) {
 
     nav input {
@@ -1147,13 +1289,17 @@ figure img {
     .panel h1,
     #the-games h1,
     #staff-team h1,
-    #event-stats h1 {
+    #event-stats h1,
+    #the-roster h1,
+    #event-date h1 {
         font-size: 2.5em;
     }
 
     #the-games,
     #staff-team,
-    #event-stats {
+    #event-stats,
+    #the-roster,
+    #event-date {
         width: 700px;
     }
 
@@ -1164,7 +1310,6 @@ figure img {
     .game-panel-info {
         max-width: 50%;
         font-size: 0.75em;
-        backdrop-filter: blur(1em);
     }
 
     .game-panel-info p {
@@ -1200,7 +1345,7 @@ figure img {
     }
 
     #mystery-game {
-        background-position-x: -10em;
+        background-position-x: 0em;
     }
 
     #crumble-clash {
@@ -1481,6 +1626,11 @@ figure img {
         background-color: transparent;
         /* # | Name | Points */
     }
+
+    #roster-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -1537,13 +1687,17 @@ figure img {
     .panel h1,
     #the-games h1,
     #staff-team h1,
-    #event-stats h1 {
+    #event-stats h1,
+    #the-roster h1,
+    #event-date h1 {
         font-size: 3em;
     }
 
     #the-games,
     #staff-team,
-    #event-stats {
+    #event-stats,
+    #event-date,
+    #the-roster {
         width: 1000px;
     }
 
@@ -1580,7 +1734,7 @@ figure img {
     }
 
     #mystery-game {
-        background-position-x: -15em;
+        background-position-x: 0em;
     }
 
     #crumble-clash {
@@ -1604,6 +1758,17 @@ figure img {
         background-color: rgba(1, 1, 1, 0.7);
         padding: 1em;
         font-size: 1.2em;
+    }
+
+    #roster-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .team-panel {
+        width: 320px;
+        margin: 0;
     }
 }
 
