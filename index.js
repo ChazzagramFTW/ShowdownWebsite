@@ -37,7 +37,7 @@ app.get('/stats', (req, res) => {
 });
 
 app.get('/news', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'article.html'));
+  res.redirect('/seasonthree');
 });
 
 app.get('/lads', (req, res) => {
