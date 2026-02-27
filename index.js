@@ -16,7 +16,9 @@ if (!uri) {
 }
 
 // Serve static files from 'public' folder
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public"), {
+  index: false
+}));
 
 app.get('/', (req, res) => {
   res.redirect('/seasonthree');
