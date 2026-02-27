@@ -238,7 +238,8 @@ p {
     padding-bottom: 1em;
 }
 
-#feature a {
+#feature a,
+#what-is {
     background-color: rgba(1, 1, 1, 0.7);
     padding: 1.5em;
     text-decoration: none;
@@ -250,7 +251,8 @@ p {
     margin-top: 1em;
 }
 
-#feature a:hover {
+#feature a:hover,
+#what-is:hover {
     background-color: rgba(1, 1, 1, 0.8);
     transform: scale(1.05);
 }
@@ -413,6 +415,7 @@ p {
 
 #welcome section {
     margin: 1em 0;
+    width: 100%;
 }
 
 #welcome p {
@@ -1047,34 +1050,38 @@ figure img {
     /* points column */
 }
 
-#roster-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    margin: 1em 0;
-    gap: 1em;
-}
+    #roster-grid {
+        margin: 1em 0;
+        display: grid;
+        width: 100%;
+        border-radius: 2em;
+        border: solid white 0.2em;
+        background-color: white;
+        overflow: hidden;
+        grid-template-columns: 1fr;
+        gap: 0.2em;
+    }
 
 .team-panel {
     text-shadow: rgba(0, 0, 0, 0.3) 0em 0em 0.5em;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    width: 330px;
     margin: 0 auto;
     padding: 1em;
-    border-radius: 2em;
     box-shadow: inset 0 0 2em 0 white;
     transform: scale(1.0);
     transition: ease-in-out 0.2s;
     font-family: Magoat;
     text-align: left;
     color: white;
-    font-size: 0.8em;
+    font-size: 0.6em;
 }
 
 .team-panel h2 {
     padding: 0.5em;
     font-weight: 100;
+    font-size: 1.2em;
 }
 
 .team-panel .player-list {
@@ -1102,35 +1109,51 @@ figure img {
 }
 
 #ruby {
-    background-color: rgb(238, 86, 86);
+    background-image: url("libs/rubypng.png");
+    background-size: cover;
+    color: #df5050;
 }
 
 #amber {
-    background-color: rgb(243, 170, 86);
+    background-image: url("libs/amber.png");
+    background-size: cover;
+    color: #eea73b;
 }
 
 #topaz {
-    background-color: rgb(255, 208, 55);
+    background-image: url("libs/topaz.png");
+    background-size: cover;
+    color: #eeeb3b;
 }
 
 #kyanite {
-    background-color: rgb(108, 235, 76);
+    background-image: url("libs/kyanite.png");
+    background-size: cover;
+    color: #3bee4a;
 }
 
 #diamond {
-    background-color: rgb(82, 220, 224);
+    background-image: url("libs/diamond.png");
+    background-size: cover;
+    color: #3bd3ee;
 }
 
 #sapphire {
-    background-color: rgba(100, 128, 255);
+    background-image: url("libs/sapphire.png");
+    background-size: cover;
+    color: #6579eb;
 }
 
 #smithsonite {
-    background-color: rgb(201, 87, 230);
+    background-image: url("libs/smithsonite.png");
+    background-size: cover;
+    color: #d93bee;
 }
 
 #crystal {
-    background-color: rgba(230, 230, 230, 0.753);
+    background-image: url("libs/crystal.png");
+    background-size: cover;
+    color: #e0e0e0;
 }
 
 #event-date {
@@ -1628,8 +1651,15 @@ figure img {
     }
 
     #roster-grid {
+        width: 100%;
+        border-radius: 2em;
+        border: solid white 0.2em;
+        overflow: hidden;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
+    }
+
+    .team-panel {
+        width: 100%;
     }
 }
 
@@ -1761,13 +1791,14 @@ figure img {
     }
 
     #roster-grid {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        width: 100%;
+        border-radius: 2em;
+        border: solid white 0.2em;
+        overflow: hidden;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 
     .team-panel {
-        width: 320px;
         margin: 0;
     }
 }
@@ -1896,5 +1927,21 @@ figure img {
     #leaderboards .team-leaderboard .row div:nth-child(4) {
         text-align: right;
         /* points column */
+    }
+
+    .team-panel {
+        font-size: 0.8em;
+    }
+
+    #roster-grid {
+        width: 1328px;
+        border-radius: 2em;
+        border: solid white 0.2em;
+        overflow: hidden;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    #the-roster {
+        width: 1328px;
     }
 }
