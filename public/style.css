@@ -484,6 +484,8 @@ p {
 
 .panel figure {
     position: relative;
+    overflow: hidden;
+    border-radius: 1em;
     width: 100%;
 }
 
@@ -803,11 +805,12 @@ footer a {
 figure img {
     width: 100%;
     transform: scale(1.0);
+    transition: 0.5s ease-in-out;
     overflow: hidden;
 }
 
 figure img:hover {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 #article-info figcaption {

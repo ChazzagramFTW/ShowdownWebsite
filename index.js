@@ -28,6 +28,10 @@ app.get('/seasonthree', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'event.html'));
 });
 
+app.get('/genesis', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'genesis.html'));
+});
+
 app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
