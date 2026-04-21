@@ -20,6 +20,10 @@ app.use(express.static(path.join(__dirname, "public"), {
   index: false
 }));
 
+app.get('/discord', (req, res) => {
+    res.redirect('https://discord.gg/fUZMZfMw34');
+});
+
 app.get('/', (req, res) => {
   res.redirect('/seasonthree');
 });
