@@ -288,6 +288,7 @@ p {
 }
 
 .feature {
+    position: relative; /* needed for video positioning */
     display: flex;
     font-family: Magoat;
     justify-content: center;
@@ -295,9 +296,25 @@ p {
     flex-direction: column;
     width: 100%;
     height: 400px;
-    background-image: url("libs/SeasonThreeTeaserNoText.png");
-    background-size: cover;
-    background-position: top;
+    overflow: hidden; /* prevents video overflow */
+}
+
+/* video background */
+.feature video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* content sits above video */
+.feature > *:not(video) {
+    position: relative;
+    z-index: 1;
 }
 
 #feature-genesis {
