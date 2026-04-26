@@ -14,6 +14,15 @@
 
 }
 
+#link-back {
+    text-decoration: none;
+}
+
+#link-back:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 html {
     max-width: 100vw;
     height: 100vh;
