@@ -75,7 +75,8 @@ em {
 }
 
 nav {
-    background-image: url("libs/backdrop.png");
+    background-image: url("libs/Showdown2026Background.png");
+    background-position: center;
     background-size: cover;
     position: sticky;
     top: 0;
@@ -1342,7 +1343,7 @@ figure img:hover {
     }
 
     .feature img {
-        width: 500px;
+        width: 700px;
     }
 
     .panel {
@@ -1758,6 +1759,10 @@ figure img:hover {
     .desktop-nav a {
         font-size: 1.1em;
         width: min-content;
+    }
+
+    .feature img {
+        width: 1000px;
     }
 
     .feature h2 {

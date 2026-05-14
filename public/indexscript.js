@@ -4,6 +4,15 @@ const suggestionsBox = document.getElementById("suggestions");
 
 window.addEventListener("scroll", navHighlighter);
 
+var splashText = "SEASON THREE COMING SOON";
+
+const splash = document.getElementById("splashtext");
+
+if (splash) {
+  splash.textContent = splashText;
+}
+
+
 function navHighlighter() {
   const scrollY = window.pageYOffset;
 

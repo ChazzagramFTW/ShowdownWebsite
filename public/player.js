@@ -8,6 +8,15 @@ const suggestionsBox = document.getElementById("suggestions");
 const menuBtn = document.getElementById('mobile-menu-btn');
 const mobileMenu = document.getElementById('mobile-menu');
 
+var splashText = "SEASON THREE COMING SOON";
+
+const splash = document.getElementById("splashtext");
+
+if (splash) {
+  splash.textContent = splashText;
+}
+
+
 menuBtn.addEventListener('click', () => {
   mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
 });
